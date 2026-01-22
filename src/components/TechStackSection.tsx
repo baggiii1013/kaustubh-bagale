@@ -1,5 +1,7 @@
 "use client";
 
+import Beams from "./bg/Beams";
+
 const techStack = ["Java", "MongoDB", "Docker", "React", "Next.js","Postgres"];
 
 interface TechStackSectionProps {
@@ -8,12 +10,26 @@ interface TechStackSectionProps {
 
 export default function TechStackSection({ resumeHref = "#" }: TechStackSectionProps) {
   return (
-    <section className="snap-start-card min-w-[var(--card-width)] h-full bg-neon-blue text-black flex flex-col justify-end p-8 relative shrink-0">
-      <div className="absolute top-12 right-12 text-[15vw] font-display opacity-10 leading-none">
+    <section className="snap-start-card min-w-[var(--card-width)] h-full bg-neon-blue text-black flex flex-col justify-end p-8 relative shrink-0 overflow-hidden">
+      {/* Beams Background */}
+      <div className="absolute inset-0 w-full h-full z-0 opacity-30">
+        <Beams
+          beamWidth={3}
+          beamHeight={30}
+          beamNumber={18}
+          lightColor="#00F0FF"
+          speed={1.2}
+          noiseIntensity={1.5}
+          scale={0.15}
+          rotation={45}
+        />
+      </div>
+
+      <div className="absolute top-12 right-12 text-[15vw] font-display opacity-10 leading-none z-10">
         03
       </div>
 
-      <div className="mb-auto mt-24">
+      <div className="mb-auto mt-24 z-10">
         <div className="inline-block px-3 py-1 bg-black text-neon-blue font-accent text-[10px] uppercase mb-6">
           Core Competencies
         </div>
@@ -34,7 +50,7 @@ export default function TechStackSection({ resumeHref = "#" }: TechStackSectionP
         </div>
       </div>
 
-      <div className="flex justify-between items-end border-t border-black/20 pt-8">
+      <div className="flex justify-between items-end border-t border-black/20 pt-8 z-10">
         <div className="font-display text-4xl uppercase tracking-tighter italic">
           TOOLKIT
         </div>

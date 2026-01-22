@@ -1,5 +1,7 @@
 "use client";
 
+import Beams from "./bg/Beams";
+
 interface ProjectCardProps {
   number: string;
   title: string;
@@ -19,6 +21,12 @@ const bgColorClasses = {
   "royal-purple": "bg-royal-purple",
   "neon-green": "bg-neon-green",
   "neon-blue": "bg-neon-blue",
+};
+
+const beamLightColors = {
+  "royal-purple": "#9D4EDD",
+  "neon-green": "#CCFF00",
+  "neon-blue": "#00F0FF",
 };
 
 const hoverBgClasses = {
@@ -51,15 +59,29 @@ export default function ProjectCard({
     <section
       className={`snap-start-card min-w-[var(--card-width)] h-full ${bgColorClasses[bgColor]} ${
         isLight ? "text-black" : "text-white"
-      } flex flex-col justify-end p-8 relative shrink-0`}
+      } flex flex-col justify-end p-8 relative shrink-0 overflow-hidden`}
     >
+      {/* Beams Background */}
+      <div className="absolute inset-0 w-full h-full z-0 opacity-30">
+        <Beams
+          beamWidth={3}
+          beamHeight={30}
+          beamNumber={18}
+          lightColor={beamLightColors[bgColor]}
+          speed={1.2}
+          noiseIntensity={1.5}
+          scale={0.15}
+          rotation={-20}
+        />
+      </div>
+
       <div
-        className={`absolute top-12 right-12 text-[15vw] font-display ${numberOpacity} leading-none`}
+        className={`absolute top-12 right-12 text-[15vw] font-display ${numberOpacity} leading-none z-10`}
       >
         {number}
       </div>
 
-      <div className="mb-auto mt-24">
+      <div className="mb-auto mt-24 z-10">
         <div className={`w-20 h-1 ${accentBarColor} mb-6`}></div>
         <h2 className="font-display text-[15vw] uppercase leading-none mb-4">
           {title}
@@ -82,7 +104,7 @@ export default function ProjectCard({
         </p>
       </div>
 
-      <div className={`flex justify-between items-end border-t ${borderColor} pt-8`}>
+      <div className={`flex justify-between items-end border-t ${borderColor} pt-8 z-10`}>
         <div className="font-display text-4xl uppercase tracking-tighter italic">
           {year}
         </div>

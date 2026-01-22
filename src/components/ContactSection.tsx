@@ -1,5 +1,7 @@
 "use client";
 
+import Beams from "./bg/Beams";
+
 interface SocialLink {
   name: string;
   href: string;
@@ -28,8 +30,22 @@ export default function ContactSection({
   };
 
   return (
-    <section className="snap-start-card min-w-full h-full bg-deep-black flex flex-col justify-between p-8 shrink-0">
-      <div className="mt-24">
+    <section className="snap-start-card min-w-full h-full bg-deep-black flex flex-col justify-between p-8 shrink-0 relative overflow-hidden">
+      {/* Beams Background */}
+      <div className="absolute inset-0 w-full h-full z-0">
+        <Beams
+          beamWidth={3}
+          beamHeight={30}
+          beamNumber={20}
+          lightColor="#FF00FF"
+          speed={1.5}
+          noiseIntensity={1.5}
+          scale={0.15}
+          rotation={-30}
+        />
+      </div>
+
+      <div className="mt-24 z-10">
         <h2 className="font-display text-[18vw] uppercase leading-none text-neon-pink mb-12">
           LET&apos;S
           <br />
@@ -61,7 +77,7 @@ export default function ContactSection({
         </div>
       </div>
 
-      <div className="flex flex-col gap-8">
+      <div className="flex flex-col gap-8 z-10">
         <div className="grid grid-cols-2 gap-4 uppercase font-accent text-xs tracking-[0.2em]">
           {socials.map((social) => (
             <a
