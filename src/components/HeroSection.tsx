@@ -25,10 +25,10 @@ export default function HeroSection() {
         </span>
       </div>
 
-      <h1 className="font-display text-[20vw] uppercase leading-[0.85] tracking-tighter mt-12 z-10">
+      <h1 className="font-display text-[20vw] uppercase leading-[0.85] tracking-tighter mt-12 z-10 grid">
         KAUSTUBH
-        <br />
-        <span className="text-neon-pink">BAGALE</span>
+        {/* <br /> */}
+        <span className="text-neon-pink mt-2">BAGALE</span>
       </h1>
 
       <div className="mt-8 pl-4 border-l-4 border-neon-blue z-10">
