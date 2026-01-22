@@ -1,10 +1,24 @@
 "use client";
 
 import Link from "next/link";
+import Beams from "./bg/LazyBeams";
 
 export default function ArchiveSection() {
   return (
-    <section className="snap-start-card min-w-[var(--card-width)] h-full bg-deep-black flex flex-col justify-center items-center p-8 relative shrink-0 border-r border-white/10">
+    <section className="snap-start-card min-w-[var(--card-width)] h-full bg-deep-black flex flex-col justify-center items-center p-8 relative shrink-0 border-r border-white/10 overflow-hidden">
+      {/* Beams Background */}
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-30">
+        <Beams
+          beamWidth={3}
+          beamHeight={30}
+          beamNumber={18}
+          lightColor="#FF00FF"
+          speed={1.2}
+          noiseIntensity={1.5}
+          scale={0.15}
+          rotation={45}
+        />
+      </div>
       <div className="text-center z-10">
         <h3 className="font-display text-[12vw] uppercase leading-none mb-8">
           CURIOSITY

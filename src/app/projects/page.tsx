@@ -28,7 +28,7 @@ const projects: Project[] = [
     tags: ["React.js", "Node.js", "Nginx", "DevOps"],
     bgColor: "royal-purple",
     href: "https://convocation.paruluniversity.ac.in",
-    github: "#",
+    github: "https://github.com/baggiii1013/convocation-pu",
   },
   {
     id: "admission-portal",
@@ -40,7 +40,7 @@ const projects: Project[] = [
     tags: ["MERN Stack", "MongoDB", "Tailwind CSS", "Vercel"],
     bgColor: "neon-green",
     href: "https://parul-student-hub.vercel.app",
-    github: "#",
+    github: "https://github.com/baggiii1013/student-hub",
   },
   {
     id: "client-portfolio",
@@ -52,19 +52,19 @@ const projects: Project[] = [
     tags: ["Next.js", "Tailwind CSS", "Vercel", "Responsive"],
     bgColor: "neon-pink",
     href: "https://nishtha-adalja.vercel.app",
-    github: "#",
+    github: "https://github.com/baggiii1013/nishtha-adalja",
   },
   {
     id: "movieverse-api",
     number: "04",
-    title: "MOVIEVERSE API",
-    subtitle: "Robust Movie Database Backend",
+    title: "MOVIEVERSE",
+    subtitle: "Robust Movie Viewing platform",
     description: "Microservices-inspired architecture with JWT authentication and bcrypt security. Optimized database queries for scalable data retrieval.",
     year: "2024",
     tags: ["Express.js", "MongoDB", "JWT", "Microservices"],
     bgColor: "neon-blue",
     href: "#",
-    github: "#",
+    github: "https://github.com/baggiii1013/movieverse-pu",
   },
   {
     id: "spotify-downloader",
@@ -76,7 +76,7 @@ const projects: Project[] = [
     tags: ["React", "Express.js", "FFmpeg", "yt-dlp"],
     bgColor: "royal-purple",
     href: "#",
-    github: "#",
+    github: "https://github.com/baggiii1013/song-ripper",
   },
   {
     id: "ai-readme-generator",
@@ -88,7 +88,7 @@ const projects: Project[] = [
     tags: ["Next.js", "Tailwind CSS", "AI Integration", "Developer Tools"],
     bgColor: "neon-green",
     href: "#",
-    github: "#",
+    github: "https://github.com/baggiii1013/readme-generator",
   },
 ];
 

@@ -13,7 +13,7 @@ export default function TechStackSection({ resumeHref = "#" }: TechStackSectionP
   const duplicatedTechStack = [...techStack, ...techStack];
 
   return (
-    <section className="snap-start-card min-w-[var(--card-width)] h-full bg-neon-blue text-black flex flex-col justify-between p-8 relative shrink-0 overflow-hidden">
+    <section className="snap-start-card w-[var(--card-width)] min-w-[var(--card-width)] max-w-[var(--card-width)] h-full bg-neon-blue text-black flex flex-col justify-between p-8 relative shrink-0 overflow-hidden">
       {/* Beams Background */}
       <div className="absolute inset-0 w-full h-full z-0 opacity-30 pointer-events-none">
         <Beams

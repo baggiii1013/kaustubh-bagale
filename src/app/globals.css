@@ -8,12 +8,19 @@
   --deep-black: #050505;
   --royal-purple: #6200EA;
 
-  /* Layout Variables */
-  --card-width: 88vw;
+  /* Layout Variables - full width on mobile, account for margins on desktop */
+  --card-width: 100vw;
 
   /* Legacy */
   --background: #050505;
   --foreground: #ffffff;
+}
+
+/* Desktop: account for side margins */
+@media (min-width: 768px) {
+  :root {
+    --card-width: calc(100vw - 10rem);
+  }
 }
 
 @theme inline {

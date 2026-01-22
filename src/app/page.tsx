@@ -1,11 +1,13 @@
 "use client";
 
 import {
+  AboutSection,
   ArchiveSection,
   ContactSection,
   HeroSection,
   LoadingScreen,
   ProjectCard,
+  ProjectsBar,
   ScrollIndicator,
   StaggeredMenu,
   TechStackSection,
@@ -15,6 +17,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 const menuItems = [
   { label: 'Home', ariaLabel: 'Go to home section', link: '#home' },
   { label: 'Projects', ariaLabel: 'View projects', link: '#projects' },
+  { label: 'About', ariaLabel: 'About me', link: '#about' },
   { label: 'Tech Stack', ariaLabel: 'View tech stack', link: '#tech' },
   { label: 'Contact', ariaLabel: 'Get in touch', link: '#contact' }
 ];
@@ -30,7 +33,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentSection, setCurrentSection] = useState(0);
   const mainRef = useRef<HTMLElement>(null);
-  const totalSections = 6;
+  const totalSections = 7;
 
   useEffect(() => {
     // Simulate component loading time
@@ -105,6 +108,7 @@ export default function Home() {
   return (
     <div className="h-screen w-screen overflow-hidden">
       {isLoading && <LoadingScreen />}
+      <ProjectsBar containerRef={mainRef} />
       <StaggeredMenu
         position="right"
         items={menuItems}
@@ -122,9 +126,10 @@ export default function Home() {
         onItemClick={(item) => {
           const sectionMap: Record<string, number> = {
             '#home': 0,
-            '#projects': 1,
-            '#tech': 4,
-            '#contact': 5,
+            '#about': 1,
+            '#projects': 2,
+            '#tech': 5,
+            '#contact': 6,
           };
           const index = sectionMap[item.link];
           if (index !== undefined) {
@@ -136,6 +141,9 @@ export default function Home() {
       <main ref={mainRef} className="h-screen w-screen overflow-x-auto overflow-y-hidden snapping-container flex hide-scrollbar">
         {/* Hero Section */}
         <HeroSection />
+
+        {/* About Section */}
+        <AboutSection />
 
         {/* Project 1: Convocation Portal */}
         <ProjectCard
@@ -149,6 +157,7 @@ export default function Home() {
           ctaIcon="north_east"
           bgColor="royal-purple"
           textColor="white"
+          href="https://convocation.paruluniversity.ac.in"
         />
 
         {/* Project 2: Client Portfolio */}
@@ -183,7 +192,7 @@ export default function Home() {
         />
       </main>
 
-      <ScrollIndicator totalSections={6} activeIndex={currentSection} />
+      <ScrollIndicator totalSections={7} activeIndex={currentSection} />
     </div>
   );
 }
