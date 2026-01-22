@@ -2,7 +2,7 @@
 
 import Beams from "./bg/LazyBeams";
 
-const techStack = ["Java", "MongoDB", "Docker", "React", "Next.js", "Postgres"];
+const techStack = ["Java", "MongoDB", "Docker", "React", "Next.js", "Postgres", "Python", "Bun.js", "Firebase", "AWS", "Vite", "Rust"];
 
 interface TechStackSectionProps {
   resumeHref?: string;
@@ -56,7 +56,7 @@ export default function TechStackSection({ resumeHref = "#" }: TechStackSectionP
                 key={`${tech}-${index}`}
                 className="font-accent font-bold text-3xl uppercase tracking-wide inline-block"
               >
-                {tech}
+                | {tech} |
               </span>
             ))}
           </div>
