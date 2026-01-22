@@ -1,16 +1,19 @@
 "use client";
 
-import Beams from "./bg/Beams";
+import Beams from "./bg/LazyBeams";
 
-const techStack = ["Java", "MongoDB", "Docker", "React", "Next.js","Postgres"];
+const techStack = ["Java", "MongoDB", "Docker", "React", "Next.js", "Postgres"];
 
 interface TechStackSectionProps {
   resumeHref?: string;
 }
 
 export default function TechStackSection({ resumeHref = "#" }: TechStackSectionProps) {
+  // Duplicate the array for seamless looping
+  const duplicatedTechStack = [...techStack, ...techStack];
+
   return (
-    <section className="snap-start-card min-w-[var(--card-width)] h-full bg-neon-blue text-black flex flex-col justify-end p-8 relative shrink-0 overflow-hidden">
+    <section className="snap-start-card min-w-[var(--card-width)] h-full bg-neon-blue text-black flex flex-col justify-between p-8 relative shrink-0 overflow-hidden">
       {/* Beams Background */}
       <div className="absolute inset-0 w-full h-full z-0 opacity-30">
         <Beams
@@ -38,15 +41,25 @@ export default function TechStackSection({ resumeHref = "#" }: TechStackSectionP
           <br />
           STACK
         </h2>
-        <div className="flex flex-wrap gap-2 max-w-xs font-accent font-bold text-lg">
-          {techStack.map((tech, index) => (
-            <span key={tech} className="flex items-center gap-2">
-              <span className="border-b-2 border-black">{tech}</span>
-              {index < techStack.length - 1 && (
-                <span className="opacity-50">•</span>
-              )}
-            </span>
-          ))}
+      </div>
+
+      {/* Revolving Tech Stack Band */}
+      <div className="relative w-full overflow-hidden py-6 my-8 z-10">
+        {/* Background stripe */}
+        <div className="absolute inset-0 bg-black/10 border-y-2 border-black" />
+        
+        {/* Scrolling content */}
+        <div className="relative flex whitespace-nowrap">
+          <div className="flex gap-8 animate-[scroll-left_20s_linear_infinite]">
+            {duplicatedTechStack.map((tech, index) => (
+              <span
+                key={`${tech}-${index}`}
+                className="font-accent font-bold text-3xl uppercase tracking-wide inline-block"
+              >
+                {tech}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
 

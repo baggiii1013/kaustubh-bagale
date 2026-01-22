@@ -1,6 +1,6 @@
 "use client";
 
-import Beams from "./bg/Beams";
+import Beams from "./bg/LazyBeams";
 
 interface ProjectCardProps {
   number: string;

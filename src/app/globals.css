@@ -62,3 +62,25 @@ body {
 .snap-start-card {
   scroll-snap-align: start;
 }
+
+/* Loading Screen Animations */
+@keyframes scan {
+  0%, 100% {
+    top: 0;
+    opacity: 0;
+  }
+  50% {
+    top: 100%;
+    opacity: 1;
+  }
+}
+
+/* Rotating Band Animation */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

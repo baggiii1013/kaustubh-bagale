@@ -1,6 +1,6 @@
 "use client";
 
-import Beams from "./bg/Beams";
+import Beams from "./bg/LazyBeams";
 
 interface SocialLink {
   name: string;
@@ -30,7 +30,7 @@ export default function ContactSection({
   };
 
   return (
-    <section className="snap-start-card min-w-full h-full bg-deep-black flex flex-col justify-between p-8 shrink-0 relative overflow-hidden">
+    <section className="snap-start-card min-w-full h-full bg-deep-black flex flex-col justify-between p-8 md:p-12 shrink-0 relative overflow-hidden">
       {/* Beams Background */}
       <div className="absolute inset-0 w-full h-full z-0">
         <Beams
@@ -45,19 +45,19 @@ export default function ContactSection({
         />
       </div>
 
-      <div className="mt-24 z-10">
-        <h2 className="font-display text-[18vw] uppercase leading-none text-neon-pink mb-12">
+      <div className="mt-16 md:mt-20 z-10 flex-shrink-0">
+        <h2 className="font-display text-[18vw] md:text-[12vw] lg:text-[10vw] uppercase leading-none text-neon-pink mb-8 md:mb-12">
           LET&apos;S
           <br />
           TALK
         </h2>
-        <div className="space-y-8">
+        <div className="space-y-6 md:space-y-8">
           <div>
             <span className="font-accent text-xs uppercase tracking-widest text-white/50 block mb-2">
               Drop a line
             </span>
             <a
-              className="block font-display text-3xl hover:text-neon-pink transition-colors underline decoration-2 underline-offset-8 break-all"
+              className="block font-display text-2xl md:text-3xl hover:text-neon-pink transition-colors underline decoration-2 underline-offset-8 break-all"
               href={`mailto:${email}`}
             >
               {email}
@@ -68,7 +68,7 @@ export default function ContactSection({
               Call
             </span>
             <a
-              className="block font-display text-3xl hover:text-neon-green transition-colors"
+              className="block font-display text-2xl md:text-3xl hover:text-neon-green transition-colors"
               href={`tel:${phone.replace(/\s/g, "")}`}
             >
               {phone}
@@ -77,7 +77,7 @@ export default function ContactSection({
         </div>
       </div>
 
-      <div className="flex flex-col gap-8 z-10">
+      <div className="flex flex-col gap-6 md:gap-8 z-10 flex-shrink-0 pb-4">
         <div className="grid grid-cols-2 gap-4 uppercase font-accent text-xs tracking-[0.2em]">
           {socials.map((social) => (
             <a

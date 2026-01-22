@@ -1,15 +1,31 @@
+"use client";
+
 import {
-  ContactSection,
-  HeroSection,
-  Navbar,
-  ProjectCard,
-  ScrollIndicator,
-  TechStackSection,
+    ContactSection,
+    HeroSection,
+    LoadingScreen,
+    Navbar,
+    ProjectCard,
+    ScrollIndicator,
+    TechStackSection,
 } from "@/components";
+import { useEffect, useState } from "react";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate component loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Adjust this duration as needed
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
+      {isLoading && <LoadingScreen />}
       <Navbar />
 
       <main className="h-screen w-screen overflow-x-auto overflow-y-hidden snapping-container flex hide-scrollbar">
