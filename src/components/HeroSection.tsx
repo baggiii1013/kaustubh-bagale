@@ -6,7 +6,7 @@ export default function HeroSection() {
   return (
     <section className="snap-start-card min-w-[var(--card-width)] h-full bg-deep-black flex flex-col justify-center px-6 relative border-r border-white/10 shrink-0 overflow-hidden">
       {/* Beams Background */}
-      <div className="absolute inset-0 w-full h-full z-0">
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <Beams
           beamWidth={3}
           beamHeight={30}
@@ -19,11 +19,11 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="absolute top-16 m-2 left-6 opacity-80 z-100 ">
+      {/* <div className="absolute top-16 m-2 left-6 opacity-80 z-100 ">
         <span className="font-accent text-2xl tracking-widest uppercase text-neon-green">
           Full Stack Developer (MERN , Next.js &amp; DevOps)
         </span>
-      </div>
+      </div> */}
 
       <h1 className="font-display text-[20vw] uppercase leading-[0.85] tracking-tighter mt-12 z-10 grid">
         KAUSTUBH

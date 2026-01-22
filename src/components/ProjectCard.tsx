@@ -62,7 +62,7 @@ export default function ProjectCard({
       } flex flex-col justify-end p-8 relative shrink-0 overflow-hidden`}
     >
       {/* Beams Background */}
-      <div className="absolute inset-0 w-full h-full z-0 opacity-30">
+      <div className="absolute inset-0 w-full h-full z-0 opacity-30 pointer-events-none">
         <Beams
           beamWidth={3}
           beamHeight={30}

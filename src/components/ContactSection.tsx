@@ -21,8 +21,8 @@ const defaultSocials: SocialLink[] = [
 ];
 
 export default function ContactSection({
-  email = "hello@kaustubh.dev",
-  phone = "+91 98765 43210",
+  email = "kaustubhbagale10@gmail.com",
+  phone = "+91 8767943262",
   socials = defaultSocials,
 }: ContactSectionProps) {
   const handleScrollToStart = () => {
@@ -32,7 +32,7 @@ export default function ContactSection({
   return (
     <section className="snap-start-card min-w-full h-full bg-deep-black flex flex-col justify-between p-8 md:p-12 shrink-0 relative overflow-hidden">
       {/* Beams Background */}
-      <div className="absolute inset-0 w-full h-full z-0">
+      <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <Beams
           beamWidth={3}
           beamHeight={30}
@@ -58,7 +58,7 @@ export default function ContactSection({
             </span>
             <a
               className="block font-display text-2xl md:text-3xl hover:text-neon-pink transition-colors underline decoration-2 underline-offset-8 break-all"
-              href={`mailto:${email}`}
+              href={`mailto:${email}`} target="_blank"
             >
               {email}
             </a>

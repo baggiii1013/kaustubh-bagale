@@ -39,7 +39,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${inter.variable} ${anton.variable} ${spaceGrotesk.variable} font-sans antialiased bg-deep-black text-white selection:bg-white selection:text-black overflow-hidden`}
+        className={`${inter.variable} ${anton.variable} ${spaceGrotesk.variable} font-sans antialiased bg-deep-black text-white selection:bg-white selection:text-black`}
       >
         {children}
       </body>

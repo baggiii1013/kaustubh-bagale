@@ -1,3 +1,4 @@
+export { default as ArchiveSection } from "./ArchiveSection";
 export { default as ContactSection } from "./ContactSection";
 export { default as HeroSection } from "./HeroSection";
 export { default as LoadingScreen } from "./LoadingScreen";

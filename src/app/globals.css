@@ -33,6 +33,11 @@ body {
   background: var(--background);
   color: var(--foreground);
   min-height: max(600px, 100dvh);
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 /* Custom Utilities */
@@ -61,6 +66,11 @@ body {
 
 .snap-start-card {
   scroll-snap-align: start;
+}
+
+/* Staggered Menu - Allow clicks to pass through when menu is closed */
+.sm-scope {
+  pointer-events: none;
 }
 
 /* Loading Screen Animations */

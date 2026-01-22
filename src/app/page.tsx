@@ -1,6 +1,7 @@
 "use client";
 
 import {
+  ArchiveSection,
   ContactSection,
   HeroSection,
   LoadingScreen,
@@ -29,7 +30,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentSection, setCurrentSection] = useState(0);
   const mainRef = useRef<HTMLElement>(null);
-  const totalSections = 5;
+  const totalSections = 6;
 
   useEffect(() => {
     // Simulate component loading time
@@ -102,7 +103,7 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <div className="h-screen w-screen overflow-hidden">
       {isLoading && <LoadingScreen />}
       <StaggeredMenu
         position="right"
@@ -122,8 +123,8 @@ export default function Home() {
           const sectionMap: Record<string, number> = {
             '#home': 0,
             '#projects': 1,
-            '#tech': 3,
-            '#contact': 4,
+            '#tech': 4,
+            '#contact': 5,
           };
           const index = sectionMap[item.link];
           if (index !== undefined) {
@@ -142,36 +143,37 @@ export default function Home() {
           title="CONVOCATION"
           titleSecondLine="PORTAL"
           subtitle="Parul University Convocation Portal"
-          description="End-to-end management system streamlining graduation ceremonies for thousands."
-          year="2023"
+          description="End-to-end management system streamlining graduation ceremonies for thousands.99% uptime with upto 100,000+ users"
+          year="2025"
           ctaText="View Project"
           ctaIcon="north_east"
           bgColor="royal-purple"
           textColor="white"
         />
 
-        {/* Project 2: Spotify Loader */}
+        {/* Project 2: Client Portfolio */}
         <ProjectCard
           number="02"
-          title="SPOTIFY"
-          titleSecondLine="DOWNLOADER"
-          subtitle="Spotify Music Downloader"
-          description="High-performance tool for seamless music data extraction."
-          year="2022"
-          ctaText="View Code"
+          title="CLIENT"
+          titleSecondLine="PORTFOLIO"
+          subtitle="Client Portfolio Website"
+          description="Fully responsive, custom portfolio website with perfect 100 Lighthouse Performance score."
+          year="2026"
+          ctaText="View Site"
           ctaIcon="north_east"
           bgColor="neon-green"
           textColor="black"
-          // titleStroke
+          href="https://nishtha-adalja.vercel.app"
         />
+
+        {/* Archive / View All Projects Section */}
+        <ArchiveSection />
 
         {/* Tech Stack Section */}
         <TechStackSection resumeHref="#" />
 
         {/* Contact Section */}
         <ContactSection
-          email="hello@kaustubh.dev"
-          phone="+91 98765 43210"
           socials={[
             { name: "LinkedIn", href: "#" },
             { name: "GitHub", href: "#" },
@@ -181,7 +183,7 @@ export default function Home() {
         />
       </main>
 
-      <ScrollIndicator totalSections={5} activeIndex={currentSection} />
-    </>
+      <ScrollIndicator totalSections={6} activeIndex={currentSection} />
+    </div>
   );
 }
