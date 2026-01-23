@@ -14,10 +14,10 @@ interface ContactSectionProps {
 }
 
 const defaultSocials: SocialLink[] = [
-  { name: "LinkedIn", href: "#" },
-  { name: "GitHub", href: "#" },
-  { name: "Twitter", href: "#" },
-  { name: "Instagram", href: "#" },
+  { name: "GitHub", href: "https://github.com/baggiii1013" },
+  { name: "Instagram", href: "https://instagram.com/kaustubh_bagale10" },
+  { name: "LinkedIn", href: "https://linkedin.com/in/kaustubh-bagale-1077bb389" },
+  { name: "X", href: "https://x.com/baggiii1013" },
 ];
 
 export default function ContactSection({
@@ -45,7 +45,7 @@ export default function ContactSection({
         />
       </div>
 
-      <div className="mt-16 md:mt-20 z-10 flex-shrink-0">
+      <div className="mt-16 md:mt-20 z-10 shrink-0">
         <h2 className="font-display text-[18vw] md:text-[12vw] lg:text-[10vw] uppercase leading-none text-neon-pink mb-8 md:mb-12">
           LET&apos;S
           <br />
@@ -77,13 +77,15 @@ export default function ContactSection({
         </div>
       </div>
 
-      <div className="flex flex-col gap-6 md:gap-8 z-10 flex-shrink-0 pb-4">
+      <div className="flex flex-col gap-6 md:gap-8 z-10 shrink-0 pb-4">
         <div className="grid grid-cols-2 gap-4 uppercase font-accent text-xs tracking-[0.2em]">
           {socials.map((social) => (
             <a
               key={social.name}
               className="hover:text-neon-pink transition-colors"
               href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
             >
               {social.name}
             </a>

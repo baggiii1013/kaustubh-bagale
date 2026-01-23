@@ -1268,7 +1268,7 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [], scale = 1.0, accentCo
               top-1/2
               transform
               -translate-y-1/2
-              max-w-[240px]
+              max-w-60
               lg:max-w-[320px]
               text-right
               transition-all

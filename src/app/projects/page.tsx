@@ -171,7 +171,7 @@ export default function ProjectsPage() {
         accentColor="#FF00FF"
         isFixed={true}
         closeOnClickAway={true}
-        hideLogo={true}
+        hideLogo={false}
       />
 
       {/* Desktop: Full Screen Infinite Menu */}

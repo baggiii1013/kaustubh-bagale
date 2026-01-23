@@ -23,10 +23,10 @@ const menuItems = [
 ];
 
 const socialItems = [
-  { label: 'LinkedIn', link: 'https://linkedin.com' },
-  { label: 'GitHub', link: 'https://github.com' },
-  { label: 'Twitter', link: 'https://twitter.com' },
-  { label: 'Instagram', link: 'https://instagram.com' }
+  { label: 'GitHub', link: 'https://github.com/baggiii1013' },
+  { label: 'Instagram', link: 'https://instagram.com/kaustubh_bagale10' },
+  { label: 'LinkedIn', link: 'https://linkedin.com/in/kaustubh-bagale-1077bb389' },
+  { label: 'X', link: 'https://x.com/baggiii1013' }
 ];
 
 export default function Home() {
@@ -183,14 +183,7 @@ export default function Home() {
         <TechStackSection resumeHref="#" />
 
         {/* Contact Section */}
-        <ContactSection
-          socials={[
-            { name: "LinkedIn", href: "#" },
-            { name: "GitHub", href: "#" },
-            { name: "Twitter", href: "#" },
-            { name: "Instagram", href: "#" },
-          ]}
-        />
+        <ContactSection />
       </main>
 
       <ScrollIndicator totalSections={7} activeIndex={currentSection} />
