@@ -28,10 +28,12 @@ export interface StaggeredMenuProps {
   onMenuOpen?: () => void;
   onMenuClose?: () => void;
   onItemClick?: (item: StaggeredMenuItem, index: number) => void;
+  hideLogo?: boolean;
 }
 
 export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   position = 'right',
+  hideLogo = false,
   colors = ['#B19EEF', '#5227FF'],
   items = [],
   socialItems = [],
@@ -418,7 +420,10 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           className="staggered-menu-header absolute top-0 left-0 w-full flex items-center justify-between p-[2em] bg-transparent pointer-events-none z-20"
           aria-label="Main navigation header"
         >
-          <div className="sm-logo flex items-center select-none pointer-events-auto" aria-label="Logo">
+          <div 
+            className={`sm-logo flex items-center select-none pointer-events-auto transition-opacity duration-300 ${hideLogo ? 'opacity-0' : 'opacity-100'}`} 
+            aria-label="Logo"
+          >
             {logoUrl ? (
               <img
                 src={logoUrl}

@@ -1,5 +1,5 @@
-import { FC, useRef, useState, useEffect, MutableRefObject } from 'react';
 import { mat4, quat, vec2, vec3 } from 'gl-matrix';
+import { FC, MutableRefObject, useEffect, useRef, useState } from 'react';
 
 const discVertShaderSource = `#version 300 es
 
@@ -623,11 +623,24 @@ class ArcballControl {
 }
 
 interface MenuItem {
-  image: string;
+  image?: string;
   link: string;
   title: string;
   description: string;
+  bgColor?: string;
+  tags?: string[];
+  number?: string;
+  github?: string;
 }
+
+// Brand color map for the texture generation
+const brandColors: Record<string, string> = {
+  'royal-purple': '#6200EA',
+  'neon-green': '#CCFF00',
+  'neon-blue': '#00F0FF',
+  'neon-pink': '#FF00FF',
+  'deep-black': '#050505'
+};
 
 type ActiveItemCallback = (index: number) => void;
 type MovementChangeCallback = (isMoving: boolean) => void;
@@ -833,27 +846,119 @@ class InfiniteGridMenu {
     canvas.width = this.atlasSize * cellSize;
     canvas.height = this.atlasSize * cellSize;
 
-    Promise.all(
-      this.items.map(
-        item =>
-          new Promise<HTMLImageElement>(resolve => {
-            const img = new Image();
-            img.crossOrigin = 'anonymous';
-            img.onload = () => resolve(img);
-            img.src = item.image;
-          })
-      )
-    ).then(images => {
-      images.forEach((img, i) => {
+    // Check if items have images or should use colored backgrounds
+    const hasImages = this.items.some(item => item.image && item.image.length > 0);
+
+    if (hasImages) {
+      // Load images as before
+      Promise.all(
+        this.items.map(
+          item =>
+            new Promise<HTMLImageElement | null>(resolve => {
+              if (!item.image) {
+                resolve(null);
+                return;
+              }
+              const img = new Image();
+              img.crossOrigin = 'anonymous';
+              img.onload = () => resolve(img);
+              img.onerror = () => resolve(null);
+              img.src = item.image;
+            })
+        )
+      ).then(images => {
+        images.forEach((img, i) => {
+          const x = (i % this.atlasSize) * cellSize;
+          const y = Math.floor(i / this.atlasSize) * cellSize;
+          
+          if (img) {
+            ctx.drawImage(img, x, y, cellSize, cellSize);
+          } else {
+            // Fallback to colored background
+            this.drawColoredCell(ctx, x, y, cellSize, this.items[i]);
+          }
+        });
+
+        gl.bindTexture(gl.TEXTURE_2D, this.tex);
+        gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, canvas);
+        gl.generateMipmap(gl.TEXTURE_2D);
+      });
+    } else {
+      // Draw colored backgrounds with numbers
+      this.items.forEach((item, i) => {
         const x = (i % this.atlasSize) * cellSize;
         const y = Math.floor(i / this.atlasSize) * cellSize;
-        ctx.drawImage(img, x, y, cellSize, cellSize);
+        this.drawColoredCell(ctx, x, y, cellSize, item);
       });
 
       gl.bindTexture(gl.TEXTURE_2D, this.tex);
       gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, canvas);
       gl.generateMipmap(gl.TEXTURE_2D);
+    }
+  }
+
+  private drawColoredCell(ctx: CanvasRenderingContext2D, x: number, y: number, size: number, item: MenuItem): void {
+    // Get background color
+    const bgColor = item.bgColor ? (brandColors[item.bgColor] || item.bgColor) : '#6200EA';
+    
+    // Determine if text should be light or dark based on background
+    const isLightBg = ['neon-green', 'neon-blue', 'neon-pink'].includes(item.bgColor || '');
+    const textColor = isLightBg ? '#050505' : '#ffffff';
+    
+    // Draw background
+    ctx.fillStyle = bgColor;
+    ctx.fillRect(x, y, size, size);
+    
+    // Draw project title in center (wrap text if needed)
+    ctx.fillStyle = textColor;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    
+    // Split title into words and draw
+    const title = item.title || 'PROJECT';
+    const words = title.split(' ');
+    const maxWidth = size * 0.8;
+    
+    // Calculate font size based on title length
+    let fontSize = 72;
+    if (title.length > 15) fontSize = 56;
+    if (title.length > 20) fontSize = 48;
+    
+    ctx.font = `bold ${fontSize}px Arial, sans-serif`;
+    ctx.globalAlpha = 1;
+    
+    // Simple word wrap
+    const lines: string[] = [];
+    let currentLine = '';
+    
+    for (const word of words) {
+      const testLine = currentLine ? `${currentLine} ${word}` : word;
+      const metrics = ctx.measureText(testLine);
+      
+      if (metrics.width > maxWidth && currentLine) {
+        lines.push(currentLine);
+        currentLine = word;
+      } else {
+        currentLine = testLine;
+      }
+    }
+    if (currentLine) lines.push(currentLine);
+    
+    // Draw title lines
+    const lineHeight = fontSize * 1.2;
+    const totalHeight = lines.length * lineHeight;
+    const startY = y + size / 2 - totalHeight / 2 + lineHeight / 2 - 30;
+    
+    lines.forEach((line, i) => {
+      ctx.fillText(line, x + size / 2, startY + i * lineHeight);
     });
+    
+    // Draw project number at bottom
+    const number = item.number || '01';
+    ctx.globalAlpha = 0.6;
+    ctx.font = 'bold 48px Arial, sans-serif';
+    ctx.fillText(number, x + size / 2, y + size - 60);
+    ctx.globalAlpha = 1;
   }
 
   private initDiscInstances(count: number): void {
@@ -895,7 +1000,7 @@ class InfiniteGridMenu {
     this.control.update(deltaTime, this.TARGET_FRAME_DURATION);
 
     const positions = this.instancePositions.map(p => vec3.transformQuat(vec3.create(), p, this.control.orientation));
-    const scale = 0.25;
+    const scale = 0.35; // Increased from 0.25
     const SCALE_INTENSITY = 0.6;
 
     positions.forEach((p, ndx) => {
@@ -1045,19 +1150,24 @@ class InfiniteGridMenu {
 
 const defaultItems: MenuItem[] = [
   {
-    image: 'https://picsum.photos/900/900?grayscale',
     link: 'https://google.com/',
-    title: '',
-    description: ''
+    title: 'Project',
+    description: 'A sample project',
+    bgColor: 'royal-purple',
+    number: '01'
   }
 ];
 
 interface InfiniteMenuProps {
   items?: MenuItem[];
   scale?: number;
+  accentColor?: string;
 }
 
-const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [], scale = 1.0 }) => {
+// Export MenuItem type for use in other components
+export type { MenuItem as InfiniteMenuItem };
+
+const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [], scale = 1.0, accentColor = '#FF00FF' }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null) as MutableRefObject<HTMLCanvasElement | null>;
   const [activeItem, setActiveItem] = useState<MenuItem | null>(null);
   const [isMoving, setIsMoving] = useState<boolean>(false);
@@ -1116,74 +1226,122 @@ const InfiniteMenu: FC<InfiniteMenuProps> = ({ items = [], scale = 1.0 }) => {
 
       {activeItem && (
         <>
-          <h2
-            className={`
-          select-none
-          absolute
-          font-black
-          [font-size:4rem]
-          left-[1.6em]
-          top-1/2
-          transform
-          translate-x-[20%]
-          -translate-y-1/2
-          transition-all
-          ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
-          ${
-            isMoving
-              ? 'opacity-0 pointer-events-none duration-[100ms]'
-              : 'opacity-100 pointer-events-auto duration-[500ms]'
-          }
-        `}
-          >
-            {activeItem.title}
-          </h2>
-
-          <p
-            className={`
-          select-none
-          absolute
-          max-w-[10ch]
-          text-[1.5rem]
-          top-1/2
-          right-[1%]
-          transition-all
-          ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
-          ${
-            isMoving
-              ? 'opacity-0 pointer-events-none duration-[100ms] translate-x-[-60%] -translate-y-1/2'
-              : 'opacity-100 pointer-events-auto duration-[500ms] translate-x-[-90%] -translate-y-1/2'
-          }
-        `}
-          >
-            {activeItem.description}
-          </p>
-
+          {/* Left side - Technologies/Tags */}
           <div
-            onClick={handleButtonClick}
             className={`
-          absolute
-          left-1/2
-          z-10
-          w-[60px]
-          h-[60px]
-          grid
-          place-items-center
-          bg-[#00ffff]
-          border-[5px]
-          border-black
-          rounded-full
-          cursor-pointer
-          transition-all
-          ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
-          ${
-            isMoving
-              ? 'bottom-[-80px] opacity-0 pointer-events-none duration-[100ms] scale-0 -translate-x-1/2'
-              : 'bottom-[3.8em] opacity-100 pointer-events-auto duration-[500ms] scale-100 -translate-x-1/2'
-          }
-        `}
+              select-none
+              absolute
+              left-6
+              lg:left-12
+              top-1/2
+              transform
+              -translate-y-1/2
+              flex
+              flex-col
+              gap-3
+              transition-all
+              ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
+              ${isMoving
+                ? 'opacity-0 pointer-events-none duration-100 -translate-x-4'
+                : 'opacity-100 pointer-events-auto duration-500 translate-x-0'
+              }
+            `}
           >
-            <p className="select-none relative text-[#060010] top-[2px] text-[26px]">&#x2197;</p>
+            <span className="font-accent text-sm text-center bg-black lg:text-base text-white/40 uppercase tracking-widest mb-2">Tech Stack</span>
+            {activeItem.tags?.map((tag, index) => (
+              <span
+                key={index}
+                className="font-accent text-sm text-shadow-lg bg-white/40 lg:text-lg text-black/90 border border-white/30 px-4 py-2 backdrop-blur-sm"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          {/* Right side - Description */}
+          <div
+            className={`
+              select-none
+              absolute
+              right-6
+              lg:right-12
+              top-1/2
+              transform
+              -translate-y-1/2
+              max-w-[240px]
+              lg:max-w-[320px]
+              text-right
+              transition-all
+              ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
+              ${isMoving
+                ? 'opacity-0 pointer-events-none duration-100 translate-x-4'
+                : 'opacity-100 pointer-events-auto duration-500 translate-x-0'
+              }
+            `}
+          >
+            <h2 className="font-display text-3xl lg:text-5xl xl:text-6xl uppercase tracking-tight text-white mb-4">
+              {activeItem.title}
+            </h2>
+            <p className="font-accent text-sm lg:text-lg text-white/70 leading-relaxed">
+              {activeItem.description}
+            </p>
+          </div>
+
+          {/* Bottom - Action Buttons */}
+          <div
+            className={`
+              absolute
+              left-1/2
+              z-10
+              flex
+              items-center
+              gap-4
+              transition-all
+              ease-[cubic-bezier(0.25,0.1,0.25,1.0)]
+              ${isMoving
+                ? '-bottom-20 opacity-0 pointer-events-none duration-100 scale-0 -translate-x-1/2'
+                : 'bottom-8 opacity-100 pointer-events-auto duration-500 scale-100 -translate-x-1/2'
+              }
+            `}
+          >
+            {/* Visit Site Button - only show if link exists and is not # */}
+            {activeItem.link && activeItem.link !== '#' && (
+              <div
+                onClick={handleButtonClick}
+                style={{ backgroundColor: accentColor }}
+                className="w-14 h-14 lg:w-16 lg:h-16 grid place-items-center border-2 border-white/20 rounded-full cursor-pointer hover:scale-110 transition-transform"
+                title="Visit Site"
+              >
+                <span className="material-symbols-outlined text-deep-black text-2xl">north_east</span>
+              </div>
+            )}
+            
+            {/* GitHub Button */}
+            {activeItem.github && (
+              <div
+                onClick={() => window.open(activeItem.github, '_blank')}
+                className="w-14 h-14 lg:w-16 lg:h-16 grid place-items-center border-2 border-white/30 bg-white/10 backdrop-blur-sm rounded-full cursor-pointer hover:scale-110 hover:bg-white/20 transition-all"
+                title="View on GitHub"
+              >
+                <svg className="w-6 h-6 lg:w-7 lg:h-7 text-white" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </div>
+            )}
+            
+            {/* If no live link but has github, show github as primary */}
+            {(!activeItem.link || activeItem.link === '#') && activeItem.github && (
+              <div
+                onClick={() => window.open(activeItem.github, '_blank')}
+                style={{ backgroundColor: accentColor }}
+                className="w-14 h-14 lg:w-16 lg:h-16 grid place-items-center border-2 border-white/20 rounded-full cursor-pointer hover:scale-110 transition-transform"
+                title="View on GitHub"
+              >
+                <svg className="w-6 h-6 lg:w-7 lg:h-7 text-deep-black" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+              </div>
+            )}
           </div>
         </>
       )}

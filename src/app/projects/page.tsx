@@ -1,8 +1,10 @@
 "use client";
 
-import { StaggeredMenu } from "@/components";
-import Beams from "@/components/bg/LazyBeams";
+import { InfiniteMenu, StaggeredMenu } from "@/components";
+import type { InfiniteMenuItem } from "@/components/InfiniteMenu";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { label } from "three/tsl";
 
 interface Project {
   id: string;
@@ -118,7 +120,9 @@ const textColorMap: Record<string, boolean> = {
 
 const menuItems = [
   { label: 'Home', ariaLabel: 'Go to home page', link: '/' },
-  { label: 'Projects', ariaLabel: 'View projects', link: '/projects' },
+  { label: 'About', ariaLabel: 'About me', link: '/#about' },
+  { label: 'Tech Stack', ariaLabel: 'View tech stack', link: '/#tech' },
+  { label: 'Contact', ariaLabel: 'Get in touch', link: '/#contact' }
 ];
 
 const socialItems = [
@@ -128,7 +132,29 @@ const socialItems = [
   { label: 'Instagram', link: 'https://instagram.com' }
 ];
 
+// Transform projects for InfiniteMenu format with colored backgrounds
+const infiniteMenuItems: InfiniteMenuItem[] = projects.map((project) => ({
+  link: project.href || '#',
+  title: project.title,
+  description: project.description,
+  bgColor: project.bgColor,
+  tags: project.tags,
+  number: project.number,
+  github: project.github
+}));
+
 export default function ProjectsPage() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const checkIsDesktop = () => {
+      setIsDesktop(window.innerWidth >= 1024);
+    };
+    
+    checkIsDesktop();
+    window.addEventListener('resize', checkIsDesktop);
+    return () => window.removeEventListener('resize', checkIsDesktop);
+  }, []);
   return (
     <div className="min-h-screen bg-deep-black overflow-y-auto overflow-x-hidden">
       <StaggeredMenu
@@ -145,47 +171,67 @@ export default function ProjectsPage() {
         accentColor="#FF00FF"
         isFixed={true}
         closeOnClickAway={true}
+        hideLogo={true}
       />
 
-      {/* Hero Section */}
-      <section className="relative min-h-[60vh] flex flex-col justify-center px-8 md:px-16 pt-32 pb-16 overflow-hidden">
-        <div className="absolute inset-0 w-full h-full z-0 opacity-50 pointer-events-none">
-          <Beams
-            beamWidth={3}
-            beamHeight={30}
-            beamNumber={15}
-            lightColor="#FF00FF"
-            speed={1.5}
-            noiseIntensity={1.5}
-            scale={0.15}
-            rotation={-15}
+      {/* Desktop: Full Screen Infinite Menu */}
+      {isDesktop && (
+        <section className="relative h-screen w-full">
+          <InfiniteMenu 
+            items={infiniteMenuItems} 
+            scale={1} 
+            accentColor="#FF00FF"
           />
-        </div>
-        
-        <div className="relative z-10">
+          {/* Back to Home Link */}
           <Link 
             href="/" 
-            className="inline-flex items-center gap-2 text-white/60 hover:text-neon-pink transition-colors mb-8 font-accent text-sm uppercase tracking-widest"
+            className="absolute top-24 left-8 z-20 inline-flex items-center gap-2  hover:text-neon-pink transition-colors font-accent text-sm uppercase tracking-widest"
           >
-            <span className="material-symbols-outlined">arrow_back</span>
+            <span className="material-symbols-outlined text-neon-pink">arrow_back</span>
             Back to Home
           </Link>
-          
-          <h1 className="font-display text-[15vw] md:text-[10vw] uppercase leading-[0.85] tracking-tighter">
-            ALL
-            <br />
-            <span className="text-neon-pink">PROJECTS</span>
-          </h1>
-          
-          <p className="font-accent text-lg md:text-xl text-white/60 mt-8 max-w-2xl">
-            A collection of projects I&apos;ve built over the years. Each one represents a unique challenge and learning experience.
-          </p>
-        </div>
-      </section>
+          {/* Page Title */}
+          <div className="absolute top-24 right-8 z-20 text-right">
+            <h1 className="font-display text-2xl uppercase tracking-tighter text-neon-pink">
+              Projects
+            </h1>
+          </div>
+          {/* Drag Hint */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 font-accent text-xs text-white/30 uppercase tracking-widest z-20">
+            Drag to explore
+          </div>
+        </section>
+      )}
 
-      {/* Projects Grid */}
-      <section className="px-8 md:px-16 pb-32">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      {/* Mobile/Tablet: Hero Section */}
+      {!isDesktop && (
+        <section className="relative min-h-[40vh] flex flex-col justify-center px-8 md:px-16 pt-32 pb-16 overflow-hidden">
+          <div className="relative z-10">
+            <Link 
+              href="/" 
+              className="inline-flex items-center gap-2 text-white/60 hover:text-neon-pink transition-colors mb-8 font-accent text-sm uppercase tracking-widest"
+            >
+              <span className="material-symbols-outlined">arrow_back</span>
+              Back to Home
+            </Link>
+            
+            <h1 className="font-display text-[15vw] md:text-[10vw] uppercase leading-[0.85] tracking-tighter">
+              ALL
+              <br />
+              <span className="text-neon-pink">PROJECTS</span>
+            </h1>
+            
+            <p className="font-accent text-lg md:text-xl text-white/60 mt-8 max-w-2xl">
+              A collection of projects I&apos;ve built over the years. Each one represents a unique challenge and learning experience.
+            </p>
+          </div>
+        </section>
+      )}
+
+      {/* Mobile/Tablet: Projects Grid */}
+      {!isDesktop && (
+        <section className="px-8 md:px-16 pb-32">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {projects.map((project) => {
             const isLight = textColorMap[project.bgColor];
             
@@ -269,33 +315,38 @@ export default function ProjectsPage() {
           })}
         </div>
       </section>
+      )}
 
-      {/* Footer CTA */}
-      <section className="px-8 md:px-16 pb-16">
-        <div className="border-t border-white/10 pt-16 text-center">
-          <p className="font-accent text-lg text-white/60 mb-6">
-            Interested in working together?
-          </p>
-          <Link
-            href="/#contact"
-            className="inline-flex items-center gap-4 border-2 border-neon-pink px-8 py-4 hover:bg-neon-pink/10 transition-all group"
-          >
-            <span className="font-display text-2xl uppercase tracking-tighter text-neon-pink group-hover:text-neon-blue transition-colors">
-              Get in Touch
-            </span>
-            <span className="material-symbols-outlined text-3xl text-neon-pink group-hover:text-neon-blue group-hover:translate-x-2 transition-all">
-              arrow_forward
-            </span>
-          </Link>
-        </div>
-      </section>
+      {/* Footer CTA - Only on mobile */}
+      {!isDesktop && (
+        <section className="px-8 md:px-16 pb-16">
+          <div className="border-t border-white/10 pt-16 text-center">
+            <p className="font-accent text-lg text-white/60 mb-6">
+              Interested in working together?
+            </p>
+            <Link
+              href="/#contact"
+              className="inline-flex items-center gap-4 border-2 border-neon-pink px-8 py-4 hover:bg-neon-pink/10 transition-all group"
+            >
+              <span className="font-display text-2xl uppercase tracking-tighter text-neon-pink group-hover:text-neon-blue transition-colors">
+                Get in Touch
+              </span>
+              <span className="material-symbols-outlined text-3xl text-neon-pink group-hover:text-neon-blue group-hover:translate-x-2 transition-all">
+                arrow_forward
+              </span>
+            </Link>
+          </div>
+        </section>
+      )}
 
-      {/* Copyright */}
-      <footer className="px-8 md:px-16 pb-8">
-        <div className="font-accent text-[10px] uppercase opacity-40 text-center">
-          © {new Date().getFullYear()} / Kaustubh Bagale
-        </div>
-      </footer>
+      {/* Copyright - Only on mobile */}
+      {!isDesktop && (
+        <footer className="px-8 md:px-16 pb-8">
+          <div className="font-accent text-[10px] uppercase opacity-40 text-center">
+            © {new Date().getFullYear()} / Kaustubh Bagale
+          </div>
+        </footer>
+      )}
     </div>
   );
 }

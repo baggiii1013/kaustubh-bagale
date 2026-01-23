@@ -16,8 +16,8 @@ import { useCallback, useEffect, useRef, useState } from "react";
 
 const menuItems = [
   { label: 'Home', ariaLabel: 'Go to home section', link: '#home' },
-  { label: 'Projects', ariaLabel: 'View projects', link: '#projects' },
   { label: 'About', ariaLabel: 'About me', link: '#about' },
+  { label: 'Projects', ariaLabel: 'View projects', link: '#projects' },
   { label: 'Tech Stack', ariaLabel: 'View tech stack', link: '#tech' },
   { label: 'Contact', ariaLabel: 'Get in touch', link: '#contact' }
 ];
@@ -123,6 +123,7 @@ export default function Home() {
         accentColor="#FF00FF"
         isFixed={true}
         closeOnClickAway={true}
+        hideLogo={currentSection === 0}
         onItemClick={(item) => {
           const sectionMap: Record<string, number> = {
             '#home': 0,

@@ -93,7 +93,7 @@ export default function ProjectCard({
       onClick={handleCardClick}
       className={`snap-start-card min-w-[var(--card-width)] h-full ${bgColorClasses[bgColor]} ${
         isLight ? "text-black" : "text-white"
-      } flex flex-col justify-end p-8 relative shrink-0 overflow-hidden group/card ${href && href !== "#" ? "cursor-none" : ""}` }
+      } flex flex-col justify-end p-8 pl-14 md:p-12 relative shrink-0 overflow-hidden group/card ${href && href !== "#" ? "cursor-none" : ""}` }
     >
       {/* Custom Cursor */}
       {href && href !== "#" && (
