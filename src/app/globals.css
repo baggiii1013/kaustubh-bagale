@@ -83,11 +83,11 @@ html {
 /* Loading Screen Animations */
 @keyframes scan {
   0%, 100% {
-    top: 0;
+    transform: translateY(0);
     opacity: 0;
   }
   50% {
-    top: 100%;
+    transform: translateY(calc(100cqh - 2px));
     opacity: 1;
   }
 }

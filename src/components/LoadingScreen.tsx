@@ -38,10 +38,11 @@ export default function LoadingScreen() {
             KB
           </h1>
           {/* Glitch effect bars */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute w-full h-0.5 bg-neon-pink animate-scan" 
+          <div className="absolute inset-0 overflow-hidden" style={{ containerType: 'size' }}>
+            <div className="absolute w-full h-0.5 bg-neon-pink" 
                  style={{ 
-                   animation: "scan 2s cubic-bezier(0.4, 0, 0.6, 1) infinite" 
+                   animation: "scan 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+                   top: 0
                  }} 
             />
           </div>
@@ -53,8 +54,8 @@ export default function LoadingScreen() {
           <div className="h-1 bg-white/10 rounded-full overflow-hidden">
             {/* Progress Fill */}
             <div
-              className="h-full bg-gradient-to-r from-neon-pink via-neon-blue to-neon-green transition-all duration-300 ease-out relative"
-              style={{ width: `${Math.min(progress, 100)}%` }}
+              className="h-full bg-gradient-to-r from-neon-pink via-neon-blue to-neon-green transition-transform duration-300 ease-out relative origin-left will-change-transform"
+              style={{ transform: `scaleX(${Math.min(progress, 100) / 100})` }}
             >
               {/* Glow effect */}
               <div className="absolute inset-0 bg-white/30 blur-sm" />
