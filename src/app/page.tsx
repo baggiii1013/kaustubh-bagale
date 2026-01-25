@@ -36,12 +36,23 @@ export default function Home() {
   const totalSections = 7;
 
   useEffect(() => {
-    // Simulate component loading time
-    const timer = setTimeout(() => {
+    // Check if mobile - skip loading delay for better LCP
+    const isMobile = window.innerWidth < 768 || 'ontouchstart' in window;
+    
+    if (isMobile) {
+      // Immediate load on mobile for better performance
       setIsLoading(false);
-    }, 2000); // Adjust this duration as needed
+      return;
+    }
 
-    return () => clearTimeout(timer);
+    // Desktop: Use requestIdleCallback for smarter loading, fallback to 800ms
+    if ('requestIdleCallback' in window) {
+      const id = requestIdleCallback(() => setIsLoading(false), { timeout: 1000 });
+      return () => cancelIdleCallback(id);
+    } else {
+      const timer = setTimeout(() => setIsLoading(false), 800);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const scrollToSection = useCallback((index: number) => {

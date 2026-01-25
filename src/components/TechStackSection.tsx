@@ -1,6 +1,7 @@
 "use client";
 
 import Beams from "./bg/LazyBeams";
+import { Description } from "./icons/MaterialIcon";
 
 const techStack = ["Java", "MongoDB", "Docker", "React", "Next.js", "Postgres", "Python", "Bun.js", "Firebase", "AWS", "Vite", "Rust"];
 
@@ -75,7 +76,7 @@ export default function TechStackSection({ resumeHref = "#" }: TechStackSectionP
             Resume
           </span>
           <div className="w-8 h-8 rounded-full border border-black flex items-center justify-center group-hover:bg-black group-hover:text-neon-blue transition-all">
-            <span className="material-symbols-outlined text-sm">description</span>
+            <Description className="text-sm" />
           </div>
         </a>
       </div>

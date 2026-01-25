@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Beams from "./bg/LazyBeams";
+import { ArrowForward } from "./icons/MaterialIcon";
 
 export default function ArchiveSection() {
   return (
@@ -32,9 +33,7 @@ export default function ArchiveSection() {
           <span className="font-display text-3xl uppercase tracking-tighter text-neon-pink group-hover:text-neon-blue transition-colors">
             View All Projects
           </span>
-          <span className="material-symbols-outlined text-4xl text-neon-pink group-hover:text-neon-blue group-hover:translate-x-2 transition-all">
-            arrow_forward
-          </span>
+          <ArrowForward className="text-4xl text-neon-pink group-hover:text-neon-blue group-hover:translate-x-2 transition-all" />
         </Link>
       </div>
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 font-accent text-[10px] tracking-[0.4em] opacity-30 uppercase whitespace-nowrap">

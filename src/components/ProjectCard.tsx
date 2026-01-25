@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Beams from "./bg/LazyBeams";
+import MaterialIcon, { NorthEast } from "./icons/MaterialIcon";
 
 interface ProjectCardProps {
   number: string;
@@ -105,7 +106,7 @@ export default function ProjectCard({
             transform: 'translate(-50%, -50%)',
           }}
         >
-          <span className="material-symbols-outlined text-2xl text-deep-black">north_east</span>
+          <NorthEast className="text-2xl text-deep-black" />
         </div>
       )}
       {/* Beams Background */}
@@ -165,7 +166,7 @@ export default function ProjectCard({
           <div
             className={`w-8 h-8 rounded-full border ${buttonBorderColor} flex items-center justify-center ${hoverBgClasses[bgColor]} transition-all`}
           >
-            <span className="material-symbols-outlined text-sm">{ctaIcon}</span>
+            <MaterialIcon name={ctaIcon} className="text-sm" />
           </div>
         </a>
       </div>

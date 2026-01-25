@@ -1,6 +1,7 @@
 "use client";
 
 import Beams from "./bg/LazyBeams";
+import { ArrowForward } from "./icons/MaterialIcon";
 
 export default function HeroSection() {
   return (
@@ -43,9 +44,7 @@ export default function HeroSection() {
       </div>
 
       <div className="mt-12 flex items-center gap-4 z-10">
-        <span className="material-symbols-outlined text-4xl animate-bounce text-neon-green">
-          arrow_forward
-        </span>
+        <ArrowForward className="text-4xl animate-bounce text-neon-green" />
         <span className="font-accent uppercase tracking-tighter text-sm">
           Swipe to explore work
         </span>

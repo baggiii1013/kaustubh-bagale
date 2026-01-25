@@ -7,18 +7,26 @@ export default function LoadingScreen() {
   const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
-    // Simulate loading progress
+    // Check if mobile - skip loading screen entirely for better LCP
+    const isMobile = window.innerWidth < 768 || 'ontouchstart' in window;
+    if (isMobile) {
+      setProgress(100);
+      setIsComplete(true);
+      return;
+    }
+
+    // Faster loading animation for desktop (~800ms total instead of 2s)
     const interval = setInterval(() => {
       setProgress((prev) => {
         if (prev >= 100) {
           clearInterval(interval);
-          setTimeout(() => setIsComplete(true), 300);
+          setTimeout(() => setIsComplete(true), 150);
           return 100;
         }
-        // Smoother progress increment
-        return prev + Math.random() * 3;
+        // Faster progress increment
+        return prev + Math.random() * 8 + 5;
       });
-    }, 50);
+    }, 40);
 
     return () => clearInterval(interval);
   }, []);

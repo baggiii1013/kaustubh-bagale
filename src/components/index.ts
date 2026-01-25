@@ -11,3 +11,6 @@ export { default as ScrollIndicator } from "./ScrollIndicator";
 export { default as StaggeredMenu } from "./StaggeredMenu";
 export { default as TechStackSection } from "./TechStackSection";
 
+// Icons
+export * from "./icons/MaterialIcon";
+export { default as MaterialIcon } from "./icons/MaterialIcon";

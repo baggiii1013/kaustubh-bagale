@@ -45,10 +45,21 @@ export default function RootLayout({
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
         />
+        {/* Material Symbols loaded async with media="print" hack to prevent render blocking */}
+        {/* Only needed for /projects page - main page uses inline SVGs */}
         <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap"
           rel="stylesheet"
+          media="print"
+          // @ts-expect-error - onLoad is valid for link elements
+          onLoad="this.media='all'"
         />
+        <noscript>
+          <link
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap"
+            rel="stylesheet"
+          />
+        </noscript>
       </head>
       <body
         className={`${inter.variable} ${anton.variable} ${spaceGrotesk.variable} font-sans antialiased bg-deep-black text-white selection:bg-white selection:text-black`}
