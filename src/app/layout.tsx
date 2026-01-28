@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Anton, Inter, Space_Grotesk } from "next/font/google";
+import { MaterialSymbols } from "../components/MaterialSymbols";
 import "./globals.css";
 
 const inter = Inter({
@@ -47,19 +48,7 @@ export default function RootLayout({
         />
         {/* Material Symbols loaded async with media="print" hack to prevent render blocking */}
         {/* Only needed for /projects page - main page uses inline SVGs */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap"
-          rel="stylesheet"
-          media="print"
-          // @ts-expect-error - onLoad is valid for link elements
-          onLoad="this.media='all'"
-        />
-        <noscript>
-          <link
-            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@400&display=swap"
-            rel="stylesheet"
-          />
-        </noscript>
+        <MaterialSymbols />
       </head>
       <body
         className={`${inter.variable} ${anton.variable} ${spaceGrotesk.variable} font-sans antialiased bg-deep-black text-white selection:bg-white selection:text-black`}

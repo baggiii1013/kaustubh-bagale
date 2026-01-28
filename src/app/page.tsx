@@ -1,16 +1,16 @@
 "use client";
 
 import {
-  AboutSection,
-  ArchiveSection,
-  ContactSection,
-  HeroSection,
-  LoadingScreen,
-  ProjectCard,
-  ProjectsBar,
-  ScrollIndicator,
-  StaggeredMenu,
-  TechStackSection,
+    AboutSection,
+    ArchiveSection,
+    ContactSection,
+    HeroSection,
+    LoadingScreen,
+    ProjectCard,
+    ProjectsBar,
+    ScrollIndicator,
+    StaggeredMenu,
+    TechStackSection,
 } from "@/components";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -191,7 +191,7 @@ export default function Home() {
         <ArchiveSection />
 
         {/* Tech Stack Section */}
-        <TechStackSection resumeHref="#" />
+        <TechStackSection resumeHref="/KaustubhBagaleResume.pdf" />
 
         {/* Contact Section */}
         <ContactSection />
