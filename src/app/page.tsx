@@ -184,7 +184,7 @@ export default function Home() {
           ctaIcon="north_east"
           bgColor="neon-green"
           textColor="black"
-          href="https://nishtha-adalja.vercel.app"
+          href="https://parul-student-hub.vercel.app"
         />
 
         {/* Archive / View All Projects Section */}
