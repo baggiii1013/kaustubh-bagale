@@ -175,9 +175,9 @@ export default function Home() {
         {/* Project 2: Client Portfolio */}
         <ProjectCard
           number="02"
-          title="CLIENT"
-          titleSecondLine="PORTFOLIO"
-          subtitle="Client Portfolio Website"
+          title="Admission"
+          titleSecondLine="Portal"
+          subtitle="For first year studeni"
           description="Fully responsive, custom portfolio website with perfect 100 Lighthouse Performance score."
           year="2026"
           ctaText="View Site"
