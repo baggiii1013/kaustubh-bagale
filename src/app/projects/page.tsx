@@ -1,10 +1,7 @@
 "use client";
 
-import { InfiniteMenu, StaggeredMenu } from "@/components";
-import type { InfiniteMenuItem } from "@/components/InfiniteMenu";
+import { StaggeredMenu } from "@/components";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { label } from "three/tsl";
 
 interface Project {
   id: string;
@@ -132,29 +129,7 @@ const socialItems = [
   { label: 'Instagram', link: 'https://instagram.com' }
 ];
 
-// Transform projects for InfiniteMenu format with colored backgrounds
-const infiniteMenuItems: InfiniteMenuItem[] = projects.map((project) => ({
-  link: project.href || '#',
-  title: project.title,
-  description: project.description,
-  bgColor: project.bgColor,
-  tags: project.tags,
-  number: project.number,
-  github: project.github
-}));
-
 export default function ProjectsPage() {
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    const checkIsDesktop = () => {
-      setIsDesktop(window.innerWidth >= 1024);
-    };
-    
-    checkIsDesktop();
-    window.addEventListener('resize', checkIsDesktop);
-    return () => window.removeEventListener('resize', checkIsDesktop);
-  }, []);
   return (
     <div className="min-h-screen bg-deep-black overflow-y-auto overflow-x-hidden">
       <StaggeredMenu
@@ -174,38 +149,8 @@ export default function ProjectsPage() {
         hideLogo={false}
       />
 
-      {/* Desktop: Full Screen Infinite Menu */}
-      {isDesktop && (
-        <section className="relative h-screen w-full">
-          <InfiniteMenu 
-            items={infiniteMenuItems} 
-            scale={1} 
-            accentColor="#FF00FF"
-          />
-          {/* Back to Home Link */}
-          <Link 
-            href="/" 
-            className="absolute top-24 left-8 z-20 inline-flex items-center gap-2  hover:text-neon-pink transition-colors font-accent text-sm uppercase tracking-widest"
-          >
-            <span className="material-symbols-outlined text-neon-pink">arrow_back</span>
-            Back to Home
-          </Link>
-          {/* Page Title */}
-          <div className="absolute top-24 right-8 z-20 text-right">
-            <h1 className="font-display text-2xl uppercase tracking-tighter text-neon-pink">
-              Projects
-            </h1>
-          </div>
-          {/* Drag Hint */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 font-accent text-xs text-white/30 uppercase tracking-widest z-20">
-            Drag to explore
-          </div>
-        </section>
-      )}
-
-      {/* Mobile/Tablet: Hero Section */}
-      {!isDesktop && (
-        <section className="relative min-h-[40vh] flex flex-col justify-center px-8 md:px-16 pt-32 pb-16 overflow-hidden">
+      {/* Hero Section */}
+      <section className="relative min-h-[40vh] flex flex-col justify-center px-8 md:px-16 pt-32 pb-16 overflow-hidden">
           <div className="relative z-10">
             <Link 
               href="/" 
@@ -226,12 +171,10 @@ export default function ProjectsPage() {
             </p>
           </div>
         </section>
-      )}
 
-      {/* Mobile/Tablet: Projects Grid */}
-      {!isDesktop && (
-        <section className="px-8 md:px-16 pb-32">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+      {/* Projects Grid */}
+      <section className="px-8 md:px-16 pb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project) => {
             const isLight = textColorMap[project.bgColor];
             
@@ -315,10 +258,8 @@ export default function ProjectsPage() {
           })}
         </div>
       </section>
-      )}
 
-      {/* Footer CTA - Only on mobile */}
-      {!isDesktop && (
+      {/* Footer CTA */}
         <section className="px-8 md:px-16 pb-16">
           <div className="border-t border-white/10 pt-16 text-center">
             <p className="font-accent text-lg text-white/60 mb-6">
@@ -337,16 +278,13 @@ export default function ProjectsPage() {
             </Link>
           </div>
         </section>
-      )}
 
-      {/* Copyright - Only on mobile */}
-      {!isDesktop && (
-        <footer className="px-8 md:px-16 pb-8">
+      {/* Copyright */}
+      <footer className="px-8 md:px-16 pb-8">
           <div className="font-accent text-[10px] uppercase opacity-40 text-center">
             © {new Date().getFullYear()} / Kaustubh Bagale
           </div>
-        </footer>
-      )}
+      </footer>
     </div>
   );
 }

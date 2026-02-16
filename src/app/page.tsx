@@ -190,8 +190,8 @@ export default function Home() {
         {/* Archive / View All Projects Section */}
         <ArchiveSection />
 
-        {/* Tech Stack Section */}
-        <TechStackSection resumeHref="/KaustubhBagaleResume.pdf" />
+        {/* Tech Stack Section — change variant to: "grid" | "orbit" | "brutalist" | "marquee" */}
+        <TechStackSection resumeHref="/KaustubhBagaleResume.pdf" variant="grid" />
 
         {/* Contact Section */}
         <ContactSection />
