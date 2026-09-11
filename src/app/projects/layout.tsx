@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Projects — Full Stack & Web Development Work",
+  title: "Projects — Full Stack & Web Development",
   description:
     "Explore projects by Kaustubh Bagale — from high-scale university portals serving 100,000+ users to client portfolios and full-stack web applications built with React, Next.js, Node.js, and more.",
   openGraph: {

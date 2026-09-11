@@ -1,6 +1,8 @@
 "use client";
 
-import { StaggeredMenu } from "@/components";
+// Direct import, not the @/components barrel: the barrel drags TechStackSection
+// -> LaserFlow -> three.js (778 KB) into this route's bundle, which it never uses.
+import StaggeredMenu from "@/components/StaggeredMenu";
 import Link from "next/link";
 
 interface Project {

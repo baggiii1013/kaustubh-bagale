@@ -26,7 +26,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   title: {
-    default: "Kaustubh Bagale | Full Stack Developer - MERN & Next.js Portfolio",
+    default: "Kaustubh Bagale | Full Stack MERN & Next.js Developer",
     template: "%s | Kaustubh Bagale",
   },
   description:
