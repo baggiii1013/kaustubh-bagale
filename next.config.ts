@@ -59,6 +59,17 @@ const nextConfig: NextConfig = {
         source: "/:path*",
         headers: securityHeaders,
       },
+      {
+        // Keep the resume out of the index and let it open inline instead of force-downloading
+        source: "/KaustubhBagaleResume.pdf",
+        headers: [
+          { key: "X-Robots-Tag", value: "noindex" },
+          {
+            key: "Content-Disposition",
+            value: 'inline; filename="KaustubhBagaleResume.pdf"',
+          },
+        ],
+      },
     ];
   },
 };

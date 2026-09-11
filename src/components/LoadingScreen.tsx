@@ -42,9 +42,9 @@ export default function LoadingScreen() {
       <div className="flex flex-col items-center gap-8">
         {/* Animated Logo/Title */}
         <div className="relative">
-          <h1 className="font-display text-8xl md:text-9xl uppercase text-white animate-pulse">
+          <div className="font-display text-8xl md:text-9xl uppercase text-white animate-pulse">
             KB
-          </h1>
+          </div>
           {/* Glitch effect bars */}
           <div className="absolute inset-0 overflow-hidden" style={{ containerType: 'size' }}>
             <div className="absolute w-full h-0.5 bg-neon-pink" 

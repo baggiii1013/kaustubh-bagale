@@ -110,7 +110,6 @@ export default function RootLayout({
         <meta name="theme-color" content="#050505" />
         <meta name="theme-color" content="#050505" media="(prefers-color-scheme: dark)" />
         <meta name="theme-color" content="#050505" media="(prefers-color-scheme: light)" />
-        <link rel="canonical" href="https://kaustubhbagale.me" />
         <link
           rel="preconnect"
           href="https://fonts.googleapis.com"

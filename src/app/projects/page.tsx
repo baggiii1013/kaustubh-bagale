@@ -50,8 +50,7 @@ const projects: Project[] = [
     year: "2025",
     tags: ["Next.js", "Tailwind CSS", "Vercel", "Responsive"],
     bgColor: "neon-pink",
-    href: "https://nishtha-adalja.vercel.app",
-    github: "https://github.com/baggiii1013/nishtha-adalja",
+    href: "#",
   },
   {
     id: "movieverse-api",
