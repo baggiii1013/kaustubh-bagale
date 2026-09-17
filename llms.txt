@@ -1,0 +1,8 @@
+# Kaustubh Bagale | Full Stack MERN & Next.js Developer
+
+> Kaustubh Bagale — Full Stack Developer specializing in MERN stack & Next.js. Built scalable platforms serving 100,000+ concurrent users. View projects, tech stack, and get in touch.
+
+## Pages
+
+- [Kaustubh Bagale | Full Stack MERN & Next.js Developer](https://kaustubhbagale.me): Kaustubh Bagale — Full Stack Developer specializing in MERN stack & Next.js. Built scalable platforms serving 100,000+ concurrent users. View projects, tech…
+- [Projects — Full Stack & Web Development | Kaustubh Bagale](https://kaustubhbagale.me/projects): Explore projects by Kaustubh Bagale — from high-scale university portals serving 100,000+ users to client portfolios and full-stack web applications built with…
