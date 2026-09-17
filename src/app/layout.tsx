@@ -1,7 +1,99 @@
 import type { Metadata } from "next";
 import { Anton, Inter, Space_Grotesk } from "next/font/google";
+import { faqs } from "../components/FaqSection";
 import { MaterialSymbols } from "../components/MaterialSymbols";
 import "./globals.css";
+
+const SITE = "https://kaustubhbagale.me";
+
+// Evaluated at build time, so every deploy refreshes the freshness signal that
+// Perplexity and Google AI Overviews look for.
+const lastModified = new Date().toISOString();
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${SITE}/#person`,
+      name: "Kaustubh Bagale",
+      url: SITE,
+      email: "mailto:kaustubhbagale10@gmail.com",
+      telephone: "+91-8767943262",
+      image: `${SITE}/og-image.png`,
+      jobTitle: "Full Stack Developer",
+      description:
+        "Full Stack Developer specializing in MERN stack & Next.js, building scalable systems for 100,000+ users.",
+      address: { "@type": "PostalAddress", addressCountry: "IN" },
+      alumniOf: {
+        "@type": "CollegeOrUniversity",
+        name: "Parul University",
+        url: "https://paruluniversity.ac.in",
+      },
+      sameAs: [
+        "https://github.com/baggiii1013",
+        "https://linkedin.com/in/kaustubh-bagale-1077bb389",
+        "https://x.com/baggiii1013",
+        "https://instagram.com/kaustubh_bagale10",
+      ],
+      knowsAbout: [
+        "React.js",
+        "Next.js",
+        "Node.js",
+        "MongoDB",
+        "TypeScript",
+        "JavaScript",
+        "Full Stack Development",
+        "MERN Stack",
+        "Docker",
+        "Nginx",
+      ],
+    },
+    {
+      "@type": "Organization",
+      "@id": `${SITE}/#organization`,
+      name: "Kaustubh Bagale",
+      alternateName: "Kaustubh Bagale — Full Stack Development",
+      url: SITE,
+      logo: { "@type": "ImageObject", url: `${SITE}/og-image.png` },
+      image: `${SITE}/og-image.png`,
+      description:
+        "Independent full stack web development — MERN stack, Next.js, and DevOps for high-traffic web platforms.",
+      founder: { "@id": `${SITE}/#person` },
+      email: "kaustubhbagale10@gmail.com",
+      telephone: "+91-8767943262",
+      areaServed: "Worldwide",
+      sameAs: [
+        "https://github.com/baggiii1013",
+        "https://linkedin.com/in/kaustubh-bagale-1077bb389",
+        "https://x.com/baggiii1013",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE}/#website`,
+      name: "Kaustubh Bagale Portfolio",
+      url: SITE,
+      description:
+        "Portfolio website of Kaustubh Bagale - Full Stack Developer",
+      inLanguage: "en",
+      dateModified: lastModified,
+      author: { "@id": `${SITE}/#person` },
+      publisher: { "@id": `${SITE}/#organization` },
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${SITE}/#faq`,
+      isPartOf: { "@id": `${SITE}/#website` },
+      dateModified: lastModified,
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+    },
+  ],
+};
 
 const inter = Inter({
   variable: "--font-inter",
@@ -125,50 +217,13 @@ export default function RootLayout({
         {/* Structured Data (JSON-LD) for rich search results */}
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Kaustubh Bagale",
-              url: "https://kaustubhbagale.me",
-              jobTitle: "Full Stack Developer",
-              description:
-                "Full Stack Developer specializing in MERN stack & Next.js, building scalable systems for 100,000+ users.",
-              sameAs: [
-                "https://github.com/baggiii1013",
-                "https://linkedin.com/in/kaustubh-bagale-1077bb389",
-                "https://x.com/baggiii1013",
-                "https://instagram.com/kaustubh_bagale10",
-              ],
-              knowsAbout: [
-                "React.js",
-                "Next.js",
-                "Node.js",
-                "MongoDB",
-                "TypeScript",
-                "JavaScript",
-                "Full Stack Development",
-                "MERN Stack",
-              ],
-            }),
-          }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Kaustubh Bagale Portfolio",
-              url: "https://kaustubhbagale.me",
-              description:
-                "Portfolio website of Kaustubh Bagale - Full Stack Developer",
-              author: {
-                "@type": "Person",
-                name: "Kaustubh Bagale",
-              },
-            }),
-          }}
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Kaustubh Bagale — Updates"
+          href="/feed.xml"
         />
       </head>
       <body

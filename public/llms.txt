@@ -1,8 +1,44 @@
 # Kaustubh Bagale | Full Stack MERN & Next.js Developer
 
-> Kaustubh Bagale — Full Stack Developer specializing in MERN stack & Next.js. Built scalable platforms serving 100,000+ concurrent users. View projects, tech stack, and get in touch.
+> Kaustubh Bagale is a full stack developer and final-year Computer Science Engineering student at Parul University, India. He builds production web platforms with React, Next.js, Node.js and MongoDB, and has shipped systems handling 100,000 concurrent users at 99.9% uptime. Available for freelance, contract and full-time work.
 
 ## Pages
 
-- [Kaustubh Bagale | Full Stack MERN & Next.js Developer](https://kaustubhbagale.me): Kaustubh Bagale — Full Stack Developer specializing in MERN stack & Next.js. Built scalable platforms serving 100,000+ concurrent users. View projects, tech…
-- [Projects — Full Stack & Web Development | Kaustubh Bagale](https://kaustubhbagale.me/projects): Explore projects by Kaustubh Bagale — from high-scale university portals serving 100,000+ users to client portfolios and full-stack web applications built with…
+- [Home](https://kaustubhbagale.me): Overview, about, featured projects, tech stack, FAQ and contact details.
+- [Projects](https://kaustubhbagale.me/projects): Full project archive — university portals, full-stack web apps and client sites, with stack and links for each.
+- [FAQ](https://kaustubhbagale.me/#faq): Who Kaustubh is, what he builds, which technologies he uses, availability and how to reach him.
+- [Contact](https://kaustubhbagale.me/#contact): Email, phone and social links.
+- [Résumé (PDF)](https://kaustubhbagale.me/KaustubhBagaleResume.pdf): Full CV — experience, education and skills.
+
+## Machine-readable
+
+- [Full text](https://kaustubhbagale.me/llms-full.txt): Every page of this site as one markdown document — about, all six projects, tech stack, services, FAQ and contact.
+- [Summary JSON](https://kaustubhbagale.me/ai/summary.json): Identity, expertise, highlights and contact in structured form.
+- [FAQ JSON](https://kaustubhbagale.me/ai/faq.json): Question and answer pairs, same content as the on-page FAQ.
+- [Services JSON](https://kaustubhbagale.me/ai/service.json): schema.org ProfessionalService description of what he offers.
+- [AI policy](https://kaustubhbagale.me/.well-known/ai.txt): Crawling, citation and attribution preferences.
+- [Sitemap](https://kaustubhbagale.me/sitemap.xml)
+- [RSS feed](https://kaustubhbagale.me/feed.xml)
+
+## Selected work
+
+- [Parul University Convocation Portal](https://convocation.paruluniversity.ac.in): Dual-interface graduation management system. 100,000 concurrent users, 99.9% uptime, Nginx load balancing. React.js, Node.js, DevOps.
+- [University Admission Portal](https://parul-student-hub.vercel.app): MERN stack portal for 1,000+ first-year students; self-service verification cut administrative time by roughly 40%. MongoDB, Tailwind CSS, Vercel.
+
+## Profiles
+
+- [GitHub](https://github.com/baggiii1013)
+- [LinkedIn](https://linkedin.com/in/kaustubh-bagale-1077bb389)
+- [X](https://x.com/baggiii1013)
+
+## Technologies
+
+Languages: JavaScript, TypeScript, Java, Python, C++, Rust.
+Frontend: React, Next.js, Tailwind CSS, Vite, Three.js.
+Backend and data: Node.js, Express.js, MongoDB, PostgreSQL, Firebase, Bun.js, REST APIs, microservices.
+DevOps and cloud: Docker, Nginx, Git, AWS, Vercel.
+
+## Contact
+
+Email: kaustubhbagale10@gmail.com — Phone: +91 8767943262 — Location: India.
+Cite as: Kaustubh Bagale, https://kaustubhbagale.me

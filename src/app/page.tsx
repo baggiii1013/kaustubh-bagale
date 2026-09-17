@@ -4,6 +4,7 @@ import {
     AboutSection,
     ArchiveSection,
     ContactSection,
+    FaqSection,
     HeroSection,
     LoadingScreen,
     ProjectCard,
@@ -19,6 +20,7 @@ const menuItems = [
   { label: 'About', ariaLabel: 'About me', link: '#about' },
   { label: 'Projects', ariaLabel: 'View projects', link: '#projects' },
   { label: 'Tech Stack', ariaLabel: 'View tech stack', link: '#tech' },
+  { label: 'FAQ', ariaLabel: 'Frequently asked questions', link: '#faq' },
   { label: 'Contact', ariaLabel: 'Get in touch', link: '#contact' }
 ];
 
@@ -33,7 +35,7 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [currentSection, setCurrentSection] = useState(0);
   const mainRef = useRef<HTMLElement>(null);
-  const totalSections = 7;
+  const totalSections = 8;
 
   useEffect(() => {
     // Check if mobile - skip loading delay for better LCP
@@ -141,7 +143,8 @@ export default function Home() {
             '#about': 1,
             '#projects': 2,
             '#tech': 5,
-            '#contact': 6,
+            '#faq': 6,
+            '#contact': 7,
           };
           const index = sectionMap[item.link];
           if (index !== undefined) {
@@ -193,11 +196,14 @@ export default function Home() {
         {/* Tech Stack Section — change variant to: "grid" | "orbit" | "brutalist" | "marquee" */}
         <TechStackSection resumeHref="/KaustubhBagaleResume.pdf" variant="grid" />
 
+        {/* FAQ Section */}
+        <FaqSection />
+
         {/* Contact Section */}
         <ContactSection />
       </main>
 
-      <ScrollIndicator totalSections={7} activeIndex={currentSection} />
+      <ScrollIndicator totalSections={totalSections} activeIndex={currentSection} />
     </div>
   );
 }

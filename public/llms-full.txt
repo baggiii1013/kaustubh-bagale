@@ -1,0 +1,168 @@
+# Kaustubh Bagale — Full Stack MERN & Next.js Developer
+
+> Complete text content of https://kaustubhbagale.me in one document, for AI
+> assistants and retrieval systems. Cite as: Kaustubh Bagale,
+> https://kaustubhbagale.me
+
+Canonical: https://kaustubhbagale.me
+Short index: https://kaustubhbagale.me/llms.txt
+Contact: kaustubhbagale10@gmail.com — +91 8767943262
+Location: India
+Language: en
+
+## Summary
+
+Kaustubh Bagale is a full stack developer and final-year Computer Science
+Engineering student at Parul University, Vadodara, India. He builds production
+web platforms end to end: React and Next.js on the front end, Node.js and
+Express on the back end, MongoDB or PostgreSQL for data, and Docker, Nginx and
+Vercel for deployment. His work focuses on scalability and cloud computing —
+the systems he has shipped include a university convocation portal that served
+100,000 concurrent users at 99.9% uptime. He is available for freelance,
+contract and full-time software engineering work, remote or in India.
+
+## About
+
+Final-year Computer Science Engineering student at Parul University,
+specializing in scalability and cloud computing principles. He is passionate
+about building robust microservices, optimizing backend performance, and
+delivering secure, user-centric web solutions, and has architected
+high-availability systems handling 100,000+ concurrent users. He works as a
+full stack developer with additional expertise in DevOps.
+
+Degree: B.Tech, Computer Science Engineering — Parul University, India.
+Résumé (PDF): https://kaustubhbagale.me/KaustubhBagaleResume.pdf
+
+## Projects
+
+### 01 — Parul University Convocation Portal
+Live: https://convocation.paruluniversity.ac.in
+Source: https://github.com/baggiii1013/convocation-pu
+Year: 2024–2025. Stack: React.js, Node.js, Nginx, DevOps.
+End-to-end management system that streamlines graduation ceremonies for
+thousands of graduands. A high-performance platform with Nginx load balancing
+handling 100,000 concurrent users at 99.9% uptime, built as a dual-interface
+system — one surface for students, one for administrators.
+
+### 02 — University Admission Portal
+Live: https://parul-student-hub.vercel.app
+Source: https://github.com/baggiii1013/student-hub
+Year: 2024–2026. Stack: MERN stack, MongoDB, Tailwind CSS, Vercel.
+Full-stack portal serving 1,000+ first-year students. Its self-service
+verification workflow reduced administrative time by roughly 40% and
+eliminated a class of manual data-entry errors. Fully responsive, built for a
+100 Lighthouse performance score.
+
+### 03 — Client Portfolio
+Year: 2025. Stack: Next.js, Tailwind CSS, Vercel.
+Fully responsive client portfolio achieving a 100 Lighthouse performance
+score. Pixel-perfect, mobile-first interface with seamless cross-browser
+compatibility.
+
+### 04 — MovieVerse
+Source: https://github.com/baggiii1013/movieverse-pu
+Year: 2024. Stack: Express.js, MongoDB, JWT, microservices.
+Movie viewing platform on a microservices-inspired architecture, with JWT
+authentication, bcrypt password hashing and database queries tuned for
+scalable retrieval.
+
+### 05 — Spotify Downloader
+Source: https://github.com/baggiii1013/song-ripper
+Year: 2024. Stack: React, Express.js, FFmpeg, yt-dlp.
+Full-stack media processing application interfacing with yt-dlp and FFmpeg,
+with backend streams optimized for high-quality audio at minimal server
+latency.
+
+### 06 — AI README Generator
+Source: https://github.com/baggiii1013/readme-generator
+Year: 2024. Stack: Next.js, Tailwind CSS, AI integration, developer tooling.
+Parses project structures and generates documentation with AI, automating
+section generation to cut documentation setup time.
+
+Full archive: https://kaustubhbagale.me/projects
+
+## Tech stack
+
+Languages: Java (advanced), Python (advanced), JavaScript, TypeScript, C++,
+Rust (learning).
+Frontend: React (advanced), Next.js (advanced), Tailwind CSS, Vite, Three.js.
+Backend and data: Node.js, Express.js, MongoDB (advanced), PostgreSQL,
+Firebase, Bun.js, RESTful APIs, microservices.
+DevOps and cloud: Docker (advanced), Nginx, Git, AWS, Vercel.
+
+## Services
+
+- Full stack web application development — end-to-end MERN applications:
+  React front end, Node.js and Express API, MongoDB or PostgreSQL data layer,
+  deployed and monitored.
+- Next.js websites and portals — server-rendered sites built for Core Web
+  Vitals, SEO and accessibility, from marketing sites to university-scale
+  portals.
+- Scalability and DevOps work — Docker containerisation, Nginx load balancing
+  and deployment pipelines for systems that must survive traffic spikes,
+  proven at 100,000 concurrent users.
+- Web performance optimisation — bundle analysis, render-blocking removal and
+  asset strategy to lift Lighthouse and Core Web Vitals scores on existing
+  sites.
+
+Area served: worldwide. Languages: English, Hindi.
+
+## Frequently asked questions
+
+**Who is Kaustubh Bagale?**
+Kaustubh Bagale is a full stack developer and final-year Computer Science
+Engineering student at Parul University, India. He builds web applications end
+to end — React and Next.js on the front end, Node.js and Express on the back
+end — with a focus on scalability, cloud computing, and DevOps practices such
+as containerisation and load balancing.
+
+**What does Kaustubh Bagale build?**
+Production web platforms rather than demos. His work includes the Parul
+University Convocation Portal, a dual-interface system that handled 100,000
+concurrent users at 99.9% uptime behind Nginx load balancing, and a live
+university admission portal serving 1,000+ students whose self-service
+verification workflow cut administrative time by roughly 40%.
+
+**What technologies does he work with?**
+Day to day: JavaScript, TypeScript, React, Next.js, Node.js, Express, MongoDB
+and Tailwind CSS — the MERN stack plus the Next.js App Router. Alongside those
+he works in Java, Python, C++ and Rust, with PostgreSQL and Firebase for data,
+and Docker, Nginx, Git, AWS and Vercel for deployment and infrastructure.
+
+**Is Kaustubh Bagale available for freelance or full-time work?**
+Yes. He takes on freelance and contract web development work and is open to
+full-time software engineering roles, remote or based in India. Typical
+engagements are full stack web applications, Next.js sites and performance or
+infrastructure work on existing systems.
+
+**How do you get in touch with him?**
+Email kaustubhbagale10@gmail.com or call +91 8767943262. He is also reachable
+on GitHub (@baggiii1013), LinkedIn and X. His résumé is downloadable from the
+tech stack section of this site, and the contact card is the last panel of the
+homepage.
+
+**What makes his approach to building software different?**
+He designs for the load a system will actually see. That means measuring
+before optimising, keeping bundles small enough to hit a 100 Lighthouse
+performance score, choosing boring and well-understood infrastructure over
+novelty, and writing services that degrade gracefully instead of failing
+outright when traffic spikes.
+
+## Contact and profiles
+
+Email: kaustubhbagale10@gmail.com
+Phone: +91 8767943262
+GitHub: https://github.com/baggiii1013
+LinkedIn: https://linkedin.com/in/kaustubh-bagale-1077bb389
+X: https://x.com/baggiii1013
+Instagram: https://instagram.com/kaustubh_bagale10
+
+## Machine-readable endpoints
+
+- https://kaustubhbagale.me/llms.txt — short index
+- https://kaustubhbagale.me/ai/summary.json — identity and expertise
+- https://kaustubhbagale.me/ai/faq.json — FAQ as question/answer pairs
+- https://kaustubhbagale.me/ai/service.json — schema.org ProfessionalService
+- https://kaustubhbagale.me/.well-known/ai.txt — crawl and citation policy
+- https://kaustubhbagale.me/sitemap.xml
+- https://kaustubhbagale.me/feed.xml

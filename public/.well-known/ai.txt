@@ -1,0 +1,23 @@
+# ai.txt — AI crawler and training policy for kaustubhbagale.me
+# Contact: kaustubhbagale10@gmail.com
+
+User-Agent: *
+Allow: /
+Disallow: /KaustubhBagaleResume.pdf
+
+Policy: Content on this site may be crawled, indexed, summarised and cited by
+AI search engines and assistants. Attribution to "Kaustubh Bagale
+(https://kaustubhbagale.me)" is requested when content is quoted or summarised.
+
+Site-Name: Kaustubh Bagale
+Owner: Kaustubh Bagale
+Owner-Type: individual
+Location: India
+Contact-Email: kaustubhbagale10@gmail.com
+Canonical: https://kaustubhbagale.me
+Sitemap: https://kaustubhbagale.me/sitemap.xml
+LLMs-Txt: https://kaustubhbagale.me/llms.txt
+LLMs-Full-Txt: https://kaustubhbagale.me/llms-full.txt
+Summary: https://kaustubhbagale.me/ai/summary.json
+FAQ: https://kaustubhbagale.me/ai/faq.json
+Services: https://kaustubhbagale.me/ai/service.json

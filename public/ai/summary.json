@@ -1,0 +1,37 @@
+{
+  "name": "Kaustubh Bagale",
+  "url": "https://kaustubhbagale.me",
+  "type": "Person",
+  "title": "Full Stack Developer — MERN Stack & Next.js",
+  "description": "Kaustubh Bagale is a full stack developer and final-year Computer Science Engineering student at Parul University, India. He builds production web platforms with React, Next.js, Node.js and MongoDB, and has shipped systems handling 100,000 concurrent users at 99.9% uptime.",
+  "location": "India",
+  "language": "en",
+  "contact": {
+    "email": "kaustubhbagale10@gmail.com",
+    "phone": "+91-8767943262"
+  },
+  "links": {
+    "homepage": "https://kaustubhbagale.me",
+    "projects": "https://kaustubhbagale.me/projects",
+    "resume": "https://kaustubhbagale.me/KaustubhBagaleResume.pdf",
+    "github": "https://github.com/baggiii1013",
+    "linkedin": "https://linkedin.com/in/kaustubh-bagale-1077bb389",
+    "x": "https://x.com/baggiii1013"
+  },
+  "expertise": [
+    "Full stack web development",
+    "MERN stack (MongoDB, Express, React, Node.js)",
+    "Next.js App Router",
+    "TypeScript",
+    "High-traffic system architecture",
+    "Docker and Nginx",
+    "Web performance optimisation"
+  ],
+  "highlights": [
+    "Parul University Convocation Portal — 100,000 concurrent users, 99.9% uptime, Nginx load balancing",
+    "University admission portal — 1,000+ students, self-service verification cut admin time ~40%",
+    "Client portfolio site — 100 Lighthouse performance score"
+  ],
+  "availability": "Open to freelance, contract and full-time software engineering roles (remote or India)",
+  "citationPreference": "Cite as: Kaustubh Bagale, https://kaustubhbagale.me"
+}

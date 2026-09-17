@@ -1,0 +1,55 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Kaustubh Bagale — Full Stack Web Development",
+  "url": "https://kaustubhbagale.me",
+  "image": "https://kaustubhbagale.me/og-image.png",
+  "description": "Independent full stack web development: MERN stack applications, Next.js websites, and DevOps work on high-traffic platforms.",
+  "provider": {
+    "@type": "Person",
+    "name": "Kaustubh Bagale",
+    "url": "https://kaustubhbagale.me"
+  },
+  "email": "kaustubhbagale10@gmail.com",
+  "telephone": "+91-8767943262",
+  "areaServed": "Worldwide",
+  "availableLanguage": ["en", "hi"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Full stack web application development",
+          "description": "End-to-end MERN stack applications: React front end, Node.js and Express API, MongoDB or PostgreSQL data layer, deployed and monitored."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Next.js websites and portals",
+          "description": "Server-rendered Next.js sites built for Core Web Vitals, SEO and accessibility — marketing sites, portfolios and university-scale portals."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Scalability and DevOps work",
+          "description": "Docker containerisation, Nginx load balancing and deployment pipelines for systems that need to survive traffic spikes — proven at 100,000 concurrent users."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Web performance optimisation",
+          "description": "Bundle analysis, render-blocking removal and asset strategy to lift Lighthouse and Core Web Vitals scores on existing sites."
+        }
+      }
+    ]
+  }
+}

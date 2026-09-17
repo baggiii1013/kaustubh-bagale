@@ -1,6 +1,7 @@
 export { default as AboutSection } from "./AboutSection";
 export { default as ArchiveSection } from "./ArchiveSection";
 export { default as ContactSection } from "./ContactSection";
+export { default as FaqSection, faqs } from "./FaqSection";
 export { default as HeroSection } from "./HeroSection";
 export { default as InfiniteMenu } from "./InfiniteMenu";
 export { default as LoadingScreen } from "./LoadingScreen";
