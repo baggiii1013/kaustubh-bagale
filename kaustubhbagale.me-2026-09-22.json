@@ -1,0 +1,1321 @@
+{
+  "meta": {
+    "applicable": {
+      "images": true,
+      "hreflang": false,
+      "jsonld": true,
+      "ogImage": true,
+      "twitterImage": true,
+      "fingerprints": true,
+      "substantial": true,
+      "contentRegions": true,
+      "multipage": true,
+      "https": true,
+      "tls": true,
+      "sitemap": true,
+      "llmsTxt": true,
+      "expect": false,
+      "psi": false,
+      "psiField": false,
+      "redirects": false,
+      "external": true,
+      "compareAs": false,
+      "hosts": false
+    },
+    "ignored": 0,
+    "origin": "https://kaustubhbagale.me",
+    "pages": 2,
+    "notIndexable": 0,
+    "requests": 34,
+    "ms": 5709,
+    "date": "2026-09-22",
+    "sitemap": "https://kaustubhbagale.me/sitemap.xml"
+  },
+  "findings": [
+    {
+      "level": "warn",
+      "id": "desc-long",
+      "title": "Meta description will be cut off",
+      "detail": "181 chars (limit ~160)",
+      "url": "https://kaustubhbagale.me",
+      "reach": {
+        "inlinks": 1,
+        "depth": 0
+      }
+    },
+    {
+      "level": "warn",
+      "id": "img-dimensions",
+      "title": "1 image without width/height",
+      "detail": "First: /_next/image?url=%2FGemini_Generated_Image_36s53m36s53m36s5%2520(1).webp&w=3840&q=75. Without them the page reflows as images arrive (layout shift).",
+      "url": "https://kaustubhbagale.me",
+      "reach": {
+        "inlinks": 1,
+        "depth": 0
+      }
+    },
+    {
+      "level": "info",
+      "id": "geo-no-quotes",
+      "title": "Nothing on the page quotes anyone",
+      "detail": "No <blockquote> or <cite> in the content. An attributed quote — name, role, year — was worth +30–40% in the same study, and is the cheapest expertise signal a page can carry.",
+      "url": "https://kaustubhbagale.me",
+      "reach": {
+        "inlinks": 1,
+        "depth": 0
+      }
+    },
+    {
+      "level": "warn",
+      "id": "desc-long",
+      "title": "Meta description will be cut off",
+      "detail": "194 chars (limit ~160)",
+      "url": "https://kaustubhbagale.me/projects",
+      "reach": {
+        "inlinks": 1,
+        "depth": 1
+      }
+    },
+    {
+      "level": "warn",
+      "id": "thin-content",
+      "title": "Thin page",
+      "detail": "35 words. Under ~300 rarely ranks for anything competitive.",
+      "url": "https://kaustubhbagale.me/projects",
+      "reach": {
+        "inlinks": 1,
+        "depth": 1
+      }
+    },
+    {
+      "level": "info",
+      "id": "no-editorial-links",
+      "title": "No links inside the content",
+      "detail": "Only navigation links out of this page — nothing passes authority to related pages.",
+      "url": "https://kaustubhbagale.me/projects",
+      "reach": {
+        "inlinks": 1,
+        "depth": 1
+      }
+    },
+    {
+      "level": "info",
+      "id": "duplicate-content-not-checked",
+      "title": "1 page were not compared for duplicate content",
+      "detail": "Content is compared inside <main> or <article>. Without one of those the text of a page is the whole document, navigation and footer included, and every page of a small site would look like a copy of every other. Pages under about a hundred words are skipped for the same reason — at that length two pages share most of their words whatever they say.",
+      "url": "https://kaustubhbagale.me",
+      "reach": {
+        "inlinks": 1,
+        "depth": 0
+      }
+    },
+    {
+      "level": "warn",
+      "id": "redirect-chain",
+      "title": "http://www.kaustubhbagale.me/ takes 2 redirects",
+      "detail": "308 http://www.kaustubhbagale.me/ → 308 https://www.kaustubhbagale.me/ → 200 https://kaustubhbagale.me/",
+      "url": "http://www.kaustubhbagale.me/"
+    },
+    {
+      "level": "warn",
+      "id": "external-broken",
+      "title": "1 outbound link do not resolve",
+      "detail": "https://convocation.paruluniversity.ac.in/ (fetch failed). A link out that goes nowhere is a dead end for a reader. Checked leniently — anything but a 404, a 410 or no answer at all is left alone.",
+      "url": "https://kaustubhbagale.me",
+      "reach": {
+        "inlinks": 1,
+        "depth": 0
+      }
+    },
+    {
+      "level": "info",
+      "id": "external-redirects",
+      "title": "3 outbound links point at a redirect",
+      "detail": "https://instagram.com/kaustubh_bagale10 → https://www.instagram.com/kaustubh_bagale10, https://twitter.com/ → https://x.com/, https://instagram.com/ → https://www.instagram.com/. They work; linking to the final URL is tidier and survives the day the redirect is removed.",
+      "url": "https://kaustubhbagale.me",
+      "reach": {
+        "inlinks": 1,
+        "depth": 0
+      }
+    },
+    {
+      "level": "warn",
+      "id": "og-image-heavy",
+      "title": "og:image is very large",
+      "detail": "6.9MB — some scrapers give up before downloading it.",
+      "url": "https://kaustubhbagale.me/projects",
+      "reach": {
+        "inlinks": 1,
+        "depth": 1
+      }
+    }
+  ],
+  "causes": [
+    {
+      "id": "desc-long",
+      "title": "Meta description will be cut off",
+      "level": "warn",
+      "section": "*",
+      "everywhere": true,
+      "count": 2,
+      "pages": [
+        "https://kaustubhbagale.me",
+        "https://kaustubhbagale.me/projects"
+      ],
+      "scope": "every page crawled (2), 2 links in, starting at the homepage",
+      "area": "Content"
+    },
+    {
+      "id": "external-broken",
+      "title": "1 outbound link do not resolve",
+      "level": "warn",
+      "section": "/",
+      "count": 1,
+      "pages": [
+        "https://kaustubhbagale.me"
+      ],
+      "scope": "once",
+      "area": "Links"
+    },
+    {
+      "id": "img-dimensions",
+      "title": "1 image without width/height",
+      "level": "warn",
+      "section": "/",
+      "count": 1,
+      "pages": [
+        "https://kaustubhbagale.me"
+      ],
+      "scope": "once",
+      "area": "Images"
+    },
+    {
+      "id": "og-image-heavy",
+      "title": "og:image is very large",
+      "level": "warn",
+      "section": "/",
+      "count": 1,
+      "pages": [
+        "https://kaustubhbagale.me/projects"
+      ],
+      "scope": "once",
+      "area": "Social"
+    },
+    {
+      "id": "thin-content",
+      "title": "Thin page",
+      "level": "warn",
+      "section": "/",
+      "count": 1,
+      "pages": [
+        "https://kaustubhbagale.me/projects"
+      ],
+      "scope": "once",
+      "area": "Content"
+    },
+    {
+      "id": "redirect-chain",
+      "title": "http://www.kaustubhbagale.me/ takes 2 redirects",
+      "level": "warn",
+      "section": "/",
+      "count": 1,
+      "pages": [
+        "http://www.kaustubhbagale.me/"
+      ],
+      "scope": "once",
+      "area": "Redirects"
+    },
+    {
+      "id": "duplicate-content-not-checked",
+      "title": "1 page were not compared for duplicate content",
+      "level": "info",
+      "section": "/",
+      "count": 1,
+      "pages": [
+        "https://kaustubhbagale.me"
+      ],
+      "scope": "once",
+      "area": "Content"
+    },
+    {
+      "id": "external-redirects",
+      "title": "3 outbound links point at a redirect",
+      "level": "info",
+      "section": "/",
+      "count": 1,
+      "pages": [
+        "https://kaustubhbagale.me"
+      ],
+      "scope": "once",
+      "area": "Links"
+    },
+    {
+      "id": "geo-no-quotes",
+      "title": "Nothing on the page quotes anyone",
+      "level": "info",
+      "section": "/",
+      "count": 1,
+      "pages": [
+        "https://kaustubhbagale.me"
+      ],
+      "scope": "once",
+      "area": "AI & answer engines"
+    },
+    {
+      "id": "no-editorial-links",
+      "title": "No links inside the content",
+      "level": "info",
+      "section": "/",
+      "count": 1,
+      "pages": [
+        "https://kaustubhbagale.me/projects"
+      ],
+      "scope": "once",
+      "area": "Links"
+    }
+  ],
+  "score": {
+    "score": 86,
+    "grade": "B",
+    "ifErrorsFixed": 86,
+    "lost": 14,
+    "checks": {
+      "passed": 79,
+      "failed": 6,
+      "skipped": 24
+    },
+    "weights": {
+      "error": 12,
+      "warn": 4
+    },
+    "passed": [
+      {
+        "id": "page-status",
+        "area": "Indexability",
+        "pass": "Every page answers 200",
+        "worst": "error"
+      },
+      {
+        "id": "unreachable",
+        "area": "Indexability",
+        "pass": "The site answers",
+        "worst": "error"
+      },
+      {
+        "id": "nothing-crawlable",
+        "area": "Indexability",
+        "pass": "There is something to crawl",
+        "worst": "error"
+      },
+      {
+        "id": "noindex",
+        "area": "Indexability",
+        "pass": "No page in the sitemap says noindex",
+        "worst": "error"
+      },
+      {
+        "id": "x-robots-noindex",
+        "area": "Indexability",
+        "pass": "No X-Robots-Tag hides a page",
+        "worst": "error"
+      },
+      {
+        "id": "nofollow-page",
+        "area": "Indexability",
+        "pass": "No page tells Google to follow none of its links",
+        "worst": "warn"
+      },
+      {
+        "id": "robots-conflict",
+        "area": "Indexability",
+        "pass": "The robots meta and header agree",
+        "worst": "warn"
+      },
+      {
+        "id": "body-not-html",
+        "area": "Indexability",
+        "pass": "Every page served as HTML is HTML",
+        "worst": "warn"
+      },
+      {
+        "id": "soft-404",
+        "area": "Indexability",
+        "pass": "A URL that cannot exist returns 404",
+        "worst": "error"
+      },
+      {
+        "id": "canonical-missing",
+        "area": "Indexability",
+        "pass": "Every page declares a canonical",
+        "worst": "warn"
+      },
+      {
+        "id": "canonical-multiple",
+        "area": "Indexability",
+        "pass": "No page declares two canonicals",
+        "worst": "error"
+      },
+      {
+        "id": "canonical-dead",
+        "area": "Indexability",
+        "pass": "Every canonical target loads",
+        "worst": "error"
+      },
+      {
+        "id": "canonical-redirects",
+        "area": "Indexability",
+        "pass": "No canonical points at a redirect",
+        "worst": "error"
+      },
+      {
+        "id": "canonical-noindex",
+        "area": "Indexability",
+        "pass": "No canonical points at a noindexed page",
+        "worst": "error"
+      },
+      {
+        "id": "canonical-paginated",
+        "area": "Indexability",
+        "pass": "Paginated pages name themselves",
+        "worst": "error"
+      },
+      {
+        "id": "canonical-chain",
+        "area": "Indexability",
+        "pass": "No canonical target is canonicalised again",
+        "worst": "warn"
+      },
+      {
+        "id": "title-missing",
+        "area": "Content",
+        "pass": "Every page has a title",
+        "worst": "error"
+      },
+      {
+        "id": "title-long",
+        "area": "Content",
+        "pass": "No title is cut off in results",
+        "worst": "warn"
+      },
+      {
+        "id": "title-short",
+        "area": "Content",
+        "pass": "No title is too short to describe the page",
+        "worst": "warn"
+      },
+      {
+        "id": "desc-missing",
+        "area": "Content",
+        "pass": "Every page has a meta description",
+        "worst": "warn"
+      },
+      {
+        "id": "h1-missing",
+        "area": "Content",
+        "pass": "Every page has an h1",
+        "worst": "error"
+      },
+      {
+        "id": "h1-multiple",
+        "area": "Content",
+        "pass": "No page has two h1s",
+        "worst": "warn"
+      },
+      {
+        "id": "heading-skip",
+        "area": "Content",
+        "pass": "Heading levels do not skip",
+        "worst": "warn"
+      },
+      {
+        "id": "duplicate-title",
+        "area": "Content",
+        "pass": "No two pages share a title",
+        "worst": "warn"
+      },
+      {
+        "id": "duplicate-description",
+        "area": "Content",
+        "pass": "No two pages share a description",
+        "worst": "warn"
+      },
+      {
+        "id": "duplicate-content",
+        "area": "Content",
+        "pass": "No page is another page again",
+        "worst": "warn"
+      },
+      {
+        "id": "lang-missing",
+        "area": "Content",
+        "pass": "Every page declares its language",
+        "worst": "warn"
+      },
+      {
+        "id": "charset-missing",
+        "area": "Content",
+        "pass": "Every page declares its character set",
+        "worst": "warn"
+      },
+      {
+        "id": "viewport-missing",
+        "area": "Content",
+        "pass": "Every page declares a viewport",
+        "worst": "error"
+      },
+      {
+        "id": "viewport-locked",
+        "area": "Content",
+        "pass": "No viewport blocks zooming",
+        "worst": "warn"
+      },
+      {
+        "id": "viewport-fixed-width",
+        "area": "Content",
+        "pass": "No viewport is a fixed pixel width",
+        "worst": "warn"
+      },
+      {
+        "id": "broken-link",
+        "area": "Links",
+        "pass": "Every internal link resolves",
+        "worst": "error"
+      },
+      {
+        "id": "orphan-page",
+        "area": "Links",
+        "pass": "No page is linked from nowhere",
+        "worst": "warn"
+      },
+      {
+        "id": "no-path-from-home",
+        "area": "Links",
+        "pass": "Every page is reachable from the homepage",
+        "worst": "warn"
+      },
+      {
+        "id": "link-no-text",
+        "area": "Links",
+        "pass": "Every destination has a link that names it",
+        "worst": "warn"
+      },
+      {
+        "id": "missing-from-sitemap",
+        "area": "Links",
+        "pass": "Every linked page is in the sitemap",
+        "worst": "warn"
+      },
+      {
+        "id": "meta-refresh",
+        "area": "Redirects",
+        "pass": "No page redirects with a meta refresh",
+        "worst": "warn"
+      },
+      {
+        "id": "sitemap-redirect",
+        "area": "Redirects",
+        "pass": "No sitemap URL redirects",
+        "worst": "error"
+      },
+      {
+        "id": "trailing-slash",
+        "area": "Redirects",
+        "pass": "Trailing slashes are consistent",
+        "worst": "warn"
+      },
+      {
+        "id": "host-variant-dead",
+        "area": "Redirects",
+        "pass": "Every host variant reaches the site",
+        "worst": "warn"
+      },
+      {
+        "id": "img-alt",
+        "area": "Images",
+        "pass": "Every image has an alt attribute",
+        "worst": "error"
+      },
+      {
+        "id": "img-alt-filename",
+        "area": "Images",
+        "pass": "No alt text is a filename",
+        "worst": "warn"
+      },
+      {
+        "id": "img-alt-placeholder",
+        "area": "Images",
+        "pass": "No alt text is a placeholder",
+        "worst": "warn"
+      },
+      {
+        "id": "broken-image",
+        "area": "Images",
+        "pass": "Every image loads",
+        "worst": "error"
+      },
+      {
+        "id": "og-title-missing",
+        "area": "Social",
+        "pass": "Every page has an og:title",
+        "worst": "warn"
+      },
+      {
+        "id": "og-description-missing",
+        "area": "Social",
+        "pass": "Every page has an og:description",
+        "worst": "warn"
+      },
+      {
+        "id": "og-image-missing",
+        "area": "Social",
+        "pass": "Every page has an og:image",
+        "worst": "warn"
+      },
+      {
+        "id": "og-image-relative",
+        "area": "Social",
+        "pass": "Every og:image is an absolute URL",
+        "worst": "error"
+      },
+      {
+        "id": "og-image-broken",
+        "area": "Social",
+        "pass": "Every og:image loads",
+        "worst": "error"
+      },
+      {
+        "id": "og-webp",
+        "area": "Social",
+        "pass": "No og:image is WebP",
+        "worst": "warn"
+      },
+      {
+        "id": "twitter-image-broken",
+        "area": "Social",
+        "pass": "Every twitter:image loads",
+        "worst": "error"
+      },
+      {
+        "id": "jsonld-invalid",
+        "area": "Structured data",
+        "pass": "All JSON-LD parses",
+        "worst": "error"
+      },
+      {
+        "id": "jsonld-no-type",
+        "area": "Structured data",
+        "pass": "All JSON-LD declares a @type",
+        "worst": "warn"
+      },
+      {
+        "id": "schema-incomplete",
+        "area": "Structured data",
+        "pass": "Structured data carries what Google requires",
+        "worst": "warn"
+      },
+      {
+        "id": "schema-date-order",
+        "area": "Structured data",
+        "pass": "Structured-data dates do not contradict each other",
+        "worst": "warn"
+      },
+      {
+        "id": "schema-date-future",
+        "area": "Structured data",
+        "pass": "No structured-data date is in the future",
+        "worst": "warn"
+      },
+      {
+        "id": "schema-image-broken",
+        "area": "Structured data",
+        "pass": "Images named in structured data load",
+        "worst": "warn"
+      },
+      {
+        "id": "content-language-mismatch",
+        "area": "Multilingual",
+        "pass": "html lang agrees with the Content-Language header",
+        "worst": "warn"
+      },
+      {
+        "id": "no-sitemap",
+        "area": "Sitemap & robots",
+        "pass": "The site has a sitemap",
+        "worst": "warn"
+      },
+      {
+        "id": "robots-missing",
+        "area": "Sitemap & robots",
+        "pass": "robots.txt is there",
+        "worst": "warn"
+      },
+      {
+        "id": "robots-blocks-all",
+        "area": "Sitemap & robots",
+        "pass": "robots.txt does not block the site",
+        "worst": "error"
+      },
+      {
+        "id": "robots-blocks-sitemap-url",
+        "area": "Sitemap & robots",
+        "pass": "robots.txt does not block its own sitemap URLs",
+        "worst": "error"
+      },
+      {
+        "id": "sitemap-not-indexable",
+        "area": "Sitemap & robots",
+        "pass": "Every sitemap URL is indexable",
+        "worst": "warn"
+      },
+      {
+        "id": "sitemap-lastmod-future",
+        "area": "Sitemap & robots",
+        "pass": "No lastmod is in the future",
+        "worst": "warn"
+      },
+      {
+        "id": "sitemap-too-many-urls",
+        "area": "Sitemap & robots",
+        "pass": "Every sitemap file is within 50,000 URLs",
+        "worst": "error"
+      },
+      {
+        "id": "sitemap-too-large",
+        "area": "Sitemap & robots",
+        "pass": "Every sitemap file is within 50MB",
+        "worst": "error"
+      },
+      {
+        "id": "ai-crawler-conflict",
+        "area": "AI & answer engines",
+        "pass": "robots.txt and llms.txt agree about AI assistants",
+        "worst": "warn"
+      },
+      {
+        "id": "aeo-no-answer-block",
+        "area": "AI & answer engines",
+        "pass": "Pages answer questions in a form that can be quoted",
+        "worst": "warn"
+      },
+      {
+        "id": "aeo-boilerplate-heavy",
+        "area": "AI & answer engines",
+        "pass": "Pages are mostly their own content",
+        "worst": "warn"
+      },
+      {
+        "id": "geo-prompt-injection",
+        "area": "AI & answer engines",
+        "pass": "No hidden text addresses the model",
+        "worst": "error"
+      },
+      {
+        "id": "aeo-nosnippet",
+        "area": "AI & answer engines",
+        "pass": "No page forbids the snippet it would be quoted from",
+        "worst": "warn"
+      },
+      {
+        "id": "favicon-broken",
+        "area": "Site & security",
+        "pass": "The favicon loads",
+        "worst": "warn"
+      },
+      {
+        "id": "mixed-content",
+        "area": "Site & security",
+        "pass": "No page loads an insecure subresource",
+        "worst": "error"
+      },
+      {
+        "id": "tls-expired",
+        "area": "Site & security",
+        "pass": "The TLS certificate is valid",
+        "worst": "error"
+      },
+      {
+        "id": "tls-expiring",
+        "area": "Site & security",
+        "pass": "The TLS certificate is not about to expire",
+        "worst": "warn"
+      },
+      {
+        "id": "header-strict-transport-security",
+        "area": "Site & security",
+        "pass": "HSTS is set",
+        "worst": "warn"
+      },
+      {
+        "id": "url-uppercase",
+        "area": "Site & security",
+        "pass": "No URL has uppercase in its path",
+        "worst": "warn"
+      },
+      {
+        "id": "url-space",
+        "area": "Site & security",
+        "pass": "No URL has a space in it",
+        "worst": "warn"
+      },
+      {
+        "id": "uncompressed",
+        "area": "Performance",
+        "pass": "HTML arrives compressed",
+        "worst": "warn"
+      }
+    ],
+    "failed": [
+      {
+        "id": "desc-long",
+        "area": "Content",
+        "level": "warn",
+        "worst": "warn",
+        "pages": 2,
+        "scope": "page",
+        "cost": 4
+      },
+      {
+        "id": "external-broken",
+        "area": "Links",
+        "level": "warn",
+        "worst": "warn",
+        "pages": 1,
+        "scope": "page",
+        "cost": 2
+      },
+      {
+        "id": "img-dimensions",
+        "area": "Images",
+        "level": "warn",
+        "worst": "warn",
+        "pages": 1,
+        "scope": "page",
+        "cost": 2
+      },
+      {
+        "id": "og-image-heavy",
+        "area": "Social",
+        "level": "warn",
+        "worst": "warn",
+        "pages": 1,
+        "scope": "page",
+        "cost": 2
+      },
+      {
+        "id": "redirect-chain",
+        "area": "Redirects",
+        "level": "warn",
+        "worst": "warn",
+        "pages": 1,
+        "scope": "page",
+        "cost": 2
+      },
+      {
+        "id": "thin-content",
+        "area": "Content",
+        "level": "warn",
+        "worst": "warn",
+        "pages": 1,
+        "scope": "page",
+        "cost": 2
+      }
+    ],
+    "skipped": [
+      {
+        "id": "serves-differently",
+        "area": "Indexability",
+        "pass": "Pages read the same to another visitor",
+        "why": "The pages were not fetched a second time — run with --compare-as."
+      },
+      {
+        "id": "redirect-dead",
+        "area": "Redirects",
+        "pass": "Every URL in the redirect map still leads somewhere",
+        "why": "No redirect map was given — run with --redirects."
+      },
+      {
+        "id": "redirect-broken",
+        "area": "Redirects",
+        "pass": "Every redirect lands on a page that loads",
+        "why": "No redirect map was given — run with --redirects."
+      },
+      {
+        "id": "redirect-not-applied",
+        "area": "Redirects",
+        "pass": "Every rule in the map is in effect",
+        "why": "No redirect map was given — run with --redirects."
+      },
+      {
+        "id": "redirect-hops",
+        "area": "Redirects",
+        "pass": "No redirect takes more than one hop",
+        "why": "No redirect map was given — run with --redirects."
+      },
+      {
+        "id": "redirect-elsewhere",
+        "area": "Redirects",
+        "pass": "Every redirect lands where the map says",
+        "why": "No redirect map was given — run with --redirects."
+      },
+      {
+        "id": "redirect-temporary",
+        "area": "Redirects",
+        "pass": "Permanent redirects are served as 301",
+        "why": "No redirect map was given — run with --redirects."
+      },
+      {
+        "id": "schema-expected",
+        "area": "Structured data",
+        "pass": "Pages carry the schema types expected of them",
+        "why": "No schema expectations are configured."
+      },
+      {
+        "id": "hreflang-invalid",
+        "area": "Multilingual",
+        "pass": "Every hreflang code is well formed",
+        "why": "No page declares hreflang."
+      },
+      {
+        "id": "hreflang-one-way",
+        "area": "Multilingual",
+        "pass": "hreflang is reciprocal",
+        "why": "No page declares hreflang."
+      },
+      {
+        "id": "hreflang-dead",
+        "area": "Multilingual",
+        "pass": "Every hreflang alternate loads",
+        "why": "No page declares hreflang."
+      },
+      {
+        "id": "hreflang-no-self",
+        "area": "Multilingual",
+        "pass": "Every hreflang set lists its own page",
+        "why": "No page declares hreflang."
+      },
+      {
+        "id": "hreflang-lang-mismatch",
+        "area": "Multilingual",
+        "pass": "html lang agrees with hreflang",
+        "why": "No page declares hreflang."
+      },
+      {
+        "id": "subdomain-takeover",
+        "area": "Site & security",
+        "pass": "No subdomain points at a service that is gone",
+        "why": "The rest of the domain was not enumerated — run with --hosts.",
+        "enabledBy": "--hosts"
+      },
+      {
+        "id": "staging-indexable",
+        "area": "Site & security",
+        "pass": "No staging copy is open to the index",
+        "why": "The rest of the domain was not enumerated — run with --hosts.",
+        "enabledBy": "--hosts"
+      },
+      {
+        "id": "duplicate-host",
+        "area": "Site & security",
+        "pass": "No other host serves the same site again",
+        "why": "The rest of the domain was not enumerated — run with --hosts.",
+        "enabledBy": "--hosts"
+      },
+      {
+        "id": "psi-score",
+        "area": "Performance",
+        "pass": "PageSpeed scores the pages well",
+        "why": "PageSpeed was not asked — run with --psi.",
+        "enabledBy": "--psi"
+      },
+      {
+        "id": "psi-lcp",
+        "area": "Performance",
+        "pass": "Largest Contentful Paint is good in the lab",
+        "why": "PageSpeed was not asked — run with --psi.",
+        "enabledBy": "--psi"
+      },
+      {
+        "id": "psi-cls",
+        "area": "Performance",
+        "pass": "Cumulative Layout Shift is good in the lab",
+        "why": "PageSpeed was not asked — run with --psi.",
+        "enabledBy": "--psi"
+      },
+      {
+        "id": "psi-inp",
+        "area": "Performance",
+        "pass": "Interaction to Next Paint is good in the lab",
+        "why": "PageSpeed was not asked — run with --psi.",
+        "enabledBy": "--psi"
+      },
+      {
+        "id": "psi-field-lcp",
+        "area": "Performance",
+        "pass": "Real visitors get a good Largest Contentful Paint",
+        "why": "Google has no real-visitor data for these pages yet."
+      },
+      {
+        "id": "psi-field-cls",
+        "area": "Performance",
+        "pass": "Real visitors get a good Cumulative Layout Shift",
+        "why": "Google has no real-visitor data for these pages yet."
+      },
+      {
+        "id": "psi-field-inp",
+        "area": "Performance",
+        "pass": "Real visitors get a good Interaction to Next Paint",
+        "why": "Google has no real-visitor data for these pages yet."
+      },
+      {
+        "id": "psi-opportunity",
+        "area": "Performance",
+        "pass": "PageSpeed found nothing worth a second",
+        "why": "PageSpeed was not asked — run with --psi.",
+        "enabledBy": "--psi"
+      }
+    ],
+    "areas": [
+      {
+        "name": "Content",
+        "lost": 6,
+        "passed": 15,
+        "failed": 2
+      },
+      {
+        "name": "Images",
+        "lost": 2,
+        "passed": 4,
+        "failed": 1
+      },
+      {
+        "name": "Links",
+        "lost": 2,
+        "passed": 5,
+        "failed": 1
+      },
+      {
+        "name": "Redirects",
+        "lost": 2,
+        "passed": 4,
+        "failed": 1
+      },
+      {
+        "name": "Social",
+        "lost": 2,
+        "passed": 7,
+        "failed": 1
+      },
+      {
+        "name": "AI & answer engines",
+        "lost": 0,
+        "passed": 5,
+        "failed": 0
+      },
+      {
+        "name": "Indexability",
+        "lost": 0,
+        "passed": 16,
+        "failed": 0
+      },
+      {
+        "name": "Multilingual",
+        "lost": 0,
+        "passed": 1,
+        "failed": 0
+      },
+      {
+        "name": "Performance",
+        "lost": 0,
+        "passed": 1,
+        "failed": 0
+      },
+      {
+        "name": "Site & security",
+        "lost": 0,
+        "passed": 7,
+        "failed": 0
+      },
+      {
+        "name": "Sitemap & robots",
+        "lost": 0,
+        "passed": 8,
+        "failed": 0
+      },
+      {
+        "name": "Structured data",
+        "lost": 0,
+        "passed": 6,
+        "failed": 0
+      }
+    ],
+    "ai": {
+      "score": 98,
+      "grade": "A",
+      "possible": 120,
+      "lost": 3,
+      "pillars": [
+        {
+          "key": "access",
+          "name": "Access",
+          "blurb": "Whether an assistant is allowed to read the site at all, and whether the site says so consistently.",
+          "score": 100,
+          "grade": "A",
+          "possible": 36,
+          "lost": 0,
+          "passed": 4,
+          "failed": 0,
+          "skipped": 0,
+          "coverage": 100,
+          "signals": [
+            {
+              "id": "robots-blocks-all",
+              "pillar": "access",
+              "weight": 16,
+              "scope": "site",
+              "label": "robots.txt does not block the site",
+              "why": "A blanket Disallow is the end of the conversation. Nothing below it matters, because nothing gets read.",
+              "fix": "Narrow the Disallow to the paths that actually needed it.",
+              "state": "passed",
+              "pages": 0,
+              "spread": 0,
+              "cost": 0,
+              "sharePct": 44,
+              "recoverable": 0
+            },
+            {
+              "id": "robots-missing",
+              "pillar": "access",
+              "weight": 4,
+              "scope": "site",
+              "label": "The site serves a robots.txt",
+              "why": "Most assistants fetch it before anything else. A missing one is not a block, but it is the file where a site gets to say which crawlers it wants.",
+              "fix": "Serve a robots.txt, even one that allows everything and names the sitemap.",
+              "state": "passed",
+              "pages": 0,
+              "spread": 0,
+              "cost": 0,
+              "sharePct": 11,
+              "recoverable": 0
+            },
+            {
+              "id": "ai-crawler-conflict",
+              "pillar": "access",
+              "weight": 12,
+              "scope": "site",
+              "needs": "llmsTxt",
+              "label": "robots.txt and llms.txt agree",
+              "why": "A site that publishes llms.txt is addressing assistants directly. When robots.txt then blocks the ones it welcomes, the two files disagree and the crawler obeys robots.txt.",
+              "fix": "Decide which assistants may read the site, then say the same thing in both files.",
+              "state": "passed",
+              "pages": 0,
+              "spread": 0,
+              "cost": 0,
+              "sharePct": 33,
+              "recoverable": 0
+            },
+            {
+              "id": "llms-missing",
+              "pillar": "access",
+              "weight": 4,
+              "scope": "site",
+              "label": "The site publishes an llms.txt",
+              "why": "llms.txt is how a site tells an assistant which pages are the ones worth reading. Without it an assistant works from the sitemap and the navigation, like a crawler.",
+              "fix": "Write /llms.txt listing the pages you would want quoted. `--write-llms` generates a first draft from this crawl.",
+              "state": "passed",
+              "pages": 0,
+              "spread": 0,
+              "cost": 0,
+              "sharePct": 11,
+              "recoverable": 0
+            },
+            {
+              "id": "ai-crawler-blocked",
+              "pillar": "access",
+              "weight": 0,
+              "scope": "site",
+              "label": "No AI crawler is disallowed",
+              "why": "Blocking GPTBot or ClaudeBot is a deliberate choice and costs nothing here. It is reported because it decides the ceiling on everything below: a crawler that is refused never reads the page it would have quoted.",
+              "fix": "Nothing, unless the block was not intended.",
+              "state": "passed",
+              "pages": 0,
+              "spread": 0,
+              "cost": 0
+            }
+          ]
+        },
+        {
+          "key": "aeo",
+          "name": "Answer engines",
+          "blurb": "Whether there is a passage an assistant can lift whole and attribute, rather than a page it has to summarise itself.",
+          "score": 100,
+          "grade": "A",
+          "possible": 36,
+          "lost": 0,
+          "passed": 4,
+          "failed": 0,
+          "skipped": 0,
+          "coverage": 100,
+          "signals": [
+            {
+              "id": "aeo-no-answer-block",
+              "pillar": "aeo",
+              "weight": 12,
+              "scope": "page",
+              "needs": "substantial",
+              "label": "Pages answer a question in a liftable passage",
+              "why": "An assistant quotes a passage, not a page. With no question-shaped heading answered underneath it, it has to summarise the page and attribute the summary to itself.",
+              "fix": "Give the page a heading that asks what a reader would ask, and answer it in the paragraph underneath.",
+              "state": "passed",
+              "pages": 0,
+              "spread": 0,
+              "cost": 0,
+              "sharePct": 33,
+              "recoverable": 0
+            },
+            {
+              "id": "aeo-nosnippet",
+              "pillar": "aeo",
+              "weight": 10,
+              "scope": "page",
+              "label": "No page forbids its own snippet",
+              "why": "nosnippet, max-snippet:0 and data-nosnippet withhold the exact text an answer engine would have quoted. The page can still be read; it cannot be repeated.",
+              "fix": "Drop the directive on pages you want quoted, or narrow it to the element that needed it.",
+              "state": "passed",
+              "pages": 0,
+              "spread": 0,
+              "cost": 0,
+              "sharePct": 28,
+              "recoverable": 0
+            },
+            {
+              "id": "aeo-boilerplate-heavy",
+              "pillar": "aeo",
+              "weight": 8,
+              "scope": "page",
+              "needs": "contentRegions",
+              "label": "Pages are mostly their own content",
+              "why": "When most of the words are navigation, footer and chrome, an assistant weighing what the page is about is reading mostly furniture.",
+              "fix": "Put the content in <main> and keep the furniture out of it.",
+              "state": "passed",
+              "pages": 0,
+              "spread": 0,
+              "cost": 0,
+              "sharePct": 22,
+              "recoverable": 0
+            },
+            {
+              "id": "aeo-no-author",
+              "pillar": "aeo",
+              "weight": 6,
+              "scope": "page",
+              "needs": "substantial",
+              "label": "Pages name an author",
+              "why": "Experience and expertise are the first two letters of E-E-A-T, and neither can be read off a page that names nobody.",
+              "fix": "Name the author in the structured data, not only in the byline image.",
+              "state": "passed",
+              "pages": 0,
+              "spread": 0,
+              "cost": 0,
+              "sharePct": 17,
+              "recoverable": 0
+            }
+          ]
+        },
+        {
+          "key": "geo",
+          "name": "Generative engines",
+          "blurb": "Whether the page carries what a model weighs when it decides which of two sources to cite.",
+          "score": 94,
+          "grade": "A",
+          "possible": 48,
+          "lost": 3,
+          "passed": 4,
+          "failed": 1,
+          "skipped": 0,
+          "coverage": 100,
+          "signals": [
+            {
+              "id": "geo-prompt-injection",
+              "pillar": "geo",
+              "weight": 16,
+              "scope": "page",
+              "label": "No hidden text addresses the model",
+              "why": "Text hidden from the reader and served to the crawler, shaped like an instruction, is read as manipulation — and it is the page, not the passage, that stops being trusted.",
+              "fix": "Remove it. If it arrived with a plugin or a template, it is worth knowing it is being served.",
+              "state": "passed",
+              "pages": 0,
+              "spread": 0,
+              "cost": 0,
+              "sharePct": 33,
+              "recoverable": 0
+            },
+            {
+              "id": "geo-no-citations",
+              "pillar": "geo",
+              "weight": 12,
+              "scope": "page",
+              "needs": "substantial",
+              "label": "Pages cite a source",
+              "why": "The largest single effect in the Princeton GEO study (+30–115% visibility). An assistant weighing two pages prefers the one that shows its work.",
+              "fix": "Link out from inside the content to the sources the claims rest on.",
+              "state": "passed",
+              "pages": 0,
+              "spread": 0,
+              "cost": 0,
+              "sharePct": 25,
+              "recoverable": 0
+            },
+            {
+              "id": "geo-no-statistics",
+              "pillar": "geo",
+              "weight": 8,
+              "scope": "page",
+              "needs": "substantial",
+              "label": "Pages carry concrete numbers",
+              "why": "Second-largest effect in the same study (+40%). A number is the part of a page an assistant can quote as a fact rather than paraphrase as an opinion.",
+              "fix": "Give the figure, the percentage or the year rather than \"significantly\".",
+              "state": "passed",
+              "pages": 0,
+              "spread": 0,
+              "cost": 0,
+              "sharePct": 17,
+              "recoverable": 0
+            },
+            {
+              "id": "geo-no-quotes",
+              "pillar": "geo",
+              "weight": 6,
+              "scope": "page",
+              "needs": "substantial",
+              "label": "Pages quote someone",
+              "why": "An attributed quote — name, role, year — was worth +30–40% in the same study, and is the cheapest expertise signal a page can carry.",
+              "fix": "Quote a named person in a <blockquote> with a <cite>.",
+              "state": "failed",
+              "pages": 1,
+              "spread": 0.5,
+              "cost": 3,
+              "sharePct": 13,
+              "recoverable": 6
+            },
+            {
+              "id": "geo-chunk-wall",
+              "pillar": "geo",
+              "weight": 6,
+              "scope": "page",
+              "needs": "substantial",
+              "label": "No passage is too long to quote",
+              "why": "Retrieval splits a page into passages and quotes one. A paragraph running to the length of a page is quoted whole or not at all.",
+              "fix": "Break the passage at the points where it changes subject.",
+              "state": "passed",
+              "pages": 0,
+              "spread": 0,
+              "cost": 0,
+              "sharePct": 13,
+              "recoverable": 0
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -658,12 +658,16 @@ export const LaserFlow: React.FC<Props> = ({
             maskRepeat: 'no-repeat'
           } as React.CSSProperties}
         >
+          {/* Explicit width/height rather than `fill` so the markup carries
+              intrinsic dimensions; w-full h-full keeps the rendering identical. */}
           <Image
             src={revealImageSrc}
             alt="Reveal effect"
-            fill
+            width={2816}
+            height={1536}
             sizes="100vw"
             priority
+            className="w-full h-full"
             style={{
               objectFit: 'cover',
               mixBlendMode: 'lighten',

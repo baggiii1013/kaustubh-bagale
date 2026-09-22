@@ -50,7 +50,7 @@ export default function FaqSection() {
 
       {/* Scrollable answers */}
       <div className="flex-1 w-full z-10 overflow-y-auto scrollbar-none pr-2">
-        <dl className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-x-16 lg:gap-y-8 pb-20 md:pb-0">
+        <dl className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-x-16 lg:gap-y-8">
           {faqs.map((faq, i) => (
             <div key={faq.q} className="border-l-2 border-white/20 pl-4">
               <dt className="flex gap-3 mb-2">
@@ -67,6 +67,18 @@ export default function FaqSection() {
             </div>
           ))}
         </dl>
+
+        {/* Attributed pull-quote: the expertise signal answer engines look for. */}
+        <blockquote className="border-l-2 border-neon-green pl-4 mt-8 pb-20 md:pb-0 max-w-3xl">
+          <p className="font-body text-base md:text-lg italic leading-relaxed text-white/90">
+            &ldquo;Scale is not a feature you add later. The convocation portal
+            held 100,000 concurrent users because the load balancing was designed
+            in on day one.&rdquo;
+          </p>
+          <cite className="font-accent text-xs uppercase tracking-widest text-white/50 not-italic block mt-3">
+            Kaustubh Bagale — Full Stack Developer, 2025
+          </cite>
+        </blockquote>
       </div>
 
       {/* Footer */}

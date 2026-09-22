@@ -26,8 +26,8 @@ const menuItems = [
 
 const socialItems = [
   { label: 'GitHub', link: 'https://github.com/baggiii1013' },
-  { label: 'Instagram', link: 'https://instagram.com/kaustubh_bagale10' },
-  { label: 'LinkedIn', link: 'https://linkedin.com/in/kaustubh-bagale-1077bb389' },
+  { label: 'Instagram', link: 'https://www.instagram.com/kaustubh_bagale10' },
+  { label: 'LinkedIn', link: 'https://www.linkedin.com/in/kaustubh-bagale-1077bb389' },
   { label: 'X', link: 'https://x.com/baggiii1013' }
 ];
 
@@ -168,11 +168,13 @@ export default function Home() {
           subtitle="Parul University Convocation Portal"
           description="End-to-end management system streamlining graduation ceremonies for thousands.99% uptime with upto 100,000+ users"
           year="2025"
-          ctaText="View Project"
+          ctaText="View Code"
           ctaIcon="north_east"
           bgColor="royal-purple"
           textColor="white"
-          href="https://convocation.paruluniversity.ac.in"
+          // The live portal was taken down after the ceremony — its subdomain no
+          // longer resolves, so the CTA points at the source instead.
+          href="https://github.com/baggiii1013/convocation-pu"
         />
 
         {/* Project 2: Client Portfolio */}

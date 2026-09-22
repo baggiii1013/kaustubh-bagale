@@ -32,9 +32,9 @@ const jsonLd = {
       },
       sameAs: [
         "https://github.com/baggiii1013",
-        "https://linkedin.com/in/kaustubh-bagale-1077bb389",
+        "https://www.linkedin.com/in/kaustubh-bagale-1077bb389",
         "https://x.com/baggiii1013",
-        "https://instagram.com/kaustubh_bagale10",
+        "https://www.instagram.com/kaustubh_bagale10",
       ],
       knowsAbout: [
         "React.js",
@@ -65,7 +65,7 @@ const jsonLd = {
       areaServed: "Worldwide",
       sameAs: [
         "https://github.com/baggiii1013",
-        "https://linkedin.com/in/kaustubh-bagale-1077bb389",
+        "https://www.linkedin.com/in/kaustubh-bagale-1077bb389",
         "https://x.com/baggiii1013",
       ],
     },
@@ -122,7 +122,7 @@ export const metadata: Metadata = {
     template: "%s | Kaustubh Bagale",
   },
   description:
-    "Kaustubh Bagale — Full Stack Developer specializing in MERN stack & Next.js. Built scalable platforms serving 100,000+ concurrent users. View projects, tech stack, and get in touch.",
+    "Kaustubh Bagale — Full Stack Developer building MERN & Next.js platforms that serve 100,000+ concurrent users. See the projects, the stack, and get in touch.",
   keywords: [
     "Kaustubh Bagale",
     "kaustubh bagale portfolio",

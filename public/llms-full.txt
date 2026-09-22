@@ -36,7 +36,7 @@ Résumé (PDF): https://kaustubhbagale.me/KaustubhBagaleResume.pdf
 ## Projects
 
 ### 01 — Parul University Convocation Portal
-Live: https://convocation.paruluniversity.ac.in
+Live: offline since the ceremony ended — source: https://github.com/baggiii1013/convocation-pu
 Source: https://github.com/baggiii1013/convocation-pu
 Year: 2024–2025. Stack: React.js, Node.js, Nginx, DevOps.
 End-to-end management system that streamlines graduation ceremonies for
@@ -153,9 +153,9 @@ outright when traffic spikes.
 Email: kaustubhbagale10@gmail.com
 Phone: +91 8767943262
 GitHub: https://github.com/baggiii1013
-LinkedIn: https://linkedin.com/in/kaustubh-bagale-1077bb389
+LinkedIn: https://www.linkedin.com/in/kaustubh-bagale-1077bb389
 X: https://x.com/baggiii1013
-Instagram: https://instagram.com/kaustubh_bagale10
+Instagram: https://www.instagram.com/kaustubh_bagale10
 
 ## Machine-readable endpoints
 

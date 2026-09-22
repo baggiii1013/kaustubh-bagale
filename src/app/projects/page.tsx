@@ -28,7 +28,7 @@ const projects: Project[] = [
     year: "2024",
     tags: ["React.js", "Node.js", "Nginx", "DevOps"],
     bgColor: "royal-purple",
-    href: "https://convocation.paruluniversity.ac.in",
+    // Live portal is offline post-ceremony (subdomain no longer resolves) — code only.
     github: "https://github.com/baggiii1013/convocation-pu",
   },
   {
@@ -124,10 +124,10 @@ const menuItems = [
 ];
 
 const socialItems = [
-  { label: 'LinkedIn', link: 'https://linkedin.com' },
-  { label: 'GitHub', link: 'https://github.com' },
-  { label: 'Twitter', link: 'https://twitter.com' },
-  { label: 'Instagram', link: 'https://instagram.com' }
+  { label: 'LinkedIn', link: 'https://www.linkedin.com/in/kaustubh-bagale-1077bb389' },
+  { label: 'GitHub', link: 'https://github.com/baggiii1013' },
+  { label: 'Twitter', link: 'https://x.com/baggiii1013' },
+  { label: 'Instagram', link: 'https://www.instagram.com/kaustubh_bagale10' }
 ];
 
 export default function ProjectsPage() {
@@ -150,6 +150,7 @@ export default function ProjectsPage() {
         hideLogo={false}
       />
 
+      <main>
       {/* Hero Section */}
       <section className="relative min-h-[40vh] flex flex-col justify-center px-8 md:px-16 pt-32 pb-16 overflow-hidden">
           <div className="relative z-10">
@@ -169,6 +170,24 @@ export default function ProjectsPage() {
             
             <p className="font-accent text-lg md:text-xl text-white/60 mt-8 max-w-2xl">
               A collection of projects I&apos;ve built over the years. Each one represents a unique challenge and learning experience.
+            </p>
+
+            <p className="font-accent text-base text-white/50 mt-6 max-w-2xl leading-relaxed">
+              The six below run from university-scale infrastructure to developer
+              tooling. The convocation portal held 100,000 concurrent users behind
+              Nginx load balancing at 99.9% uptime; the admission portal cut admin
+              handling time by 40% for 1,000+ students. Smaller builds cover media
+              processing with FFmpeg and yt-dlp, JWT-secured REST APIs, and
+              AI-assisted documentation. Most are open source — the repository is
+              linked on each card. The tools behind them are listed on my{" "}
+              <Link href="/#tech" className="text-neon-pink hover:text-neon-blue transition-colors underline underline-offset-4">
+                tech stack
+              </Link>
+              , and the background is on the{" "}
+              <Link href="/#about" className="text-neon-pink hover:text-neon-blue transition-colors underline underline-offset-4">
+                about section
+              </Link>
+              .
             </p>
           </div>
         </section>
@@ -279,6 +298,7 @@ export default function ProjectsPage() {
             </Link>
           </div>
         </section>
+      </main>
 
       {/* Copyright */}
       <footer className="px-8 md:px-16 pb-8">

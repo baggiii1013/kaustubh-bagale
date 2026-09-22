@@ -15,8 +15,8 @@ interface ContactSectionProps {
 
 const defaultSocials: SocialLink[] = [
   { name: "GitHub", href: "https://github.com/baggiii1013" },
-  { name: "Instagram", href: "https://instagram.com/kaustubh_bagale10" },
-  { name: "LinkedIn", href: "https://linkedin.com/in/kaustubh-bagale-1077bb389" },
+  { name: "Instagram", href: "https://www.instagram.com/kaustubh_bagale10" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/kaustubh-bagale-1077bb389" },
   { name: "X", href: "https://x.com/baggiii1013" },
 ];
 

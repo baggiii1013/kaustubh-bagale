@@ -22,13 +22,13 @@
 
 ## Selected work
 
-- [Parul University Convocation Portal](https://convocation.paruluniversity.ac.in): Dual-interface graduation management system. 100,000 concurrent users, 99.9% uptime, Nginx load balancing. React.js, Node.js, DevOps.
+- [Parul University Convocation Portal](https://github.com/baggiii1013/convocation-pu): Dual-interface graduation management system. 100,000 concurrent users, 99.9% uptime, Nginx load balancing. React.js, Node.js, DevOps.
 - [University Admission Portal](https://parul-student-hub.vercel.app): MERN stack portal for 1,000+ first-year students; self-service verification cut administrative time by roughly 40%. MongoDB, Tailwind CSS, Vercel.
 
 ## Profiles
 
 - [GitHub](https://github.com/baggiii1013)
-- [LinkedIn](https://linkedin.com/in/kaustubh-bagale-1077bb389)
+- [LinkedIn](https://www.linkedin.com/in/kaustubh-bagale-1077bb389)
 - [X](https://x.com/baggiii1013)
 
 ## Technologies
