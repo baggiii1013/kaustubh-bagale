@@ -68,14 +68,6 @@ html {
   text-orientation: mixed;
 }
 
-.snapping-container {
-  scroll-snap-type: x mandatory;
-}
-
-.snap-start-card {
-  scroll-snap-align: start;
-}
-
 /* Staggered Menu - Allow clicks to pass through when menu is closed */
 .sm-scope {
   pointer-events: none;

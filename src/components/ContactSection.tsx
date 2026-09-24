@@ -30,7 +30,7 @@ export default function ContactSection({
   };
 
   return (
-    <section className="snap-start-card min-w-full h-full bg-deep-black flex flex-col justify-between p-8 md:p-12 shrink-0 relative overflow-hidden">
+    <section className="min-w-full h-full bg-deep-black flex flex-col justify-between p-8 md:p-12 shrink-0 relative overflow-hidden">
       {/* Beams Background */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <Beams

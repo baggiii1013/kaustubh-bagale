@@ -411,7 +411,7 @@ export default function TechStackSection({ resumeHref = "#", variant = "grid" }:
   };
 
   return (
-    <section className="snap-start-card w-[var(--card-width)] min-w-[var(--card-width)] max-w-[var(--card-width)] h-full bg-black text-white flex flex-col relative shrink-0 overflow-hidden">
+    <section className="w-[var(--card-width)] min-w-[var(--card-width)] max-w-[var(--card-width)] h-full bg-black text-white flex flex-col relative shrink-0 overflow-hidden">
       <LaserFlow
         revealImageSrc="/Gemini_Generated_Image_36s53m36s53m36s5%20(1).webp"
         horizontalBeamOffset={0.1}

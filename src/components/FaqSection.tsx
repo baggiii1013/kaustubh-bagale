@@ -33,7 +33,7 @@ export default function FaqSection() {
     <section
       id="faq"
       aria-labelledby="faq-heading"
-      className="snap-start-card w-[var(--card-width)] h-full bg-deep-black flex flex-col p-6 md:p-12 relative shrink-0 border-r border-white/10 overflow-hidden"
+      className="w-[var(--card-width)] h-full bg-deep-black flex flex-col p-6 md:p-12 relative shrink-0 border-r border-white/10 overflow-hidden"
     >
       {/* Header */}
       <div className="z-10 shrink-0 mt-20.25 mb-4 md:mb-8">

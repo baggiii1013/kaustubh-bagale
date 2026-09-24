@@ -5,7 +5,7 @@ import { ArrowForward } from "./icons/MaterialIcon";
 
 export default function HeroSection() {
   return (
-    <section className="snap-start-card min-w-(--card-width) h-full bg-deep-black flex flex-col justify-center px-6 relative border-r border-white/10 shrink-0 overflow-hidden">
+    <section className="min-w-(--card-width) h-full bg-deep-black flex flex-col justify-center px-6 relative border-r border-white/10 shrink-0 overflow-hidden">
       {/* Beams Background */}
       <div className="absolute inset-0 w-full h-full z-0 pointer-events-none">
         <Beams

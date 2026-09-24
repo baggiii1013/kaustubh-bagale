@@ -92,7 +92,7 @@ export default function ProjectCard({
     <section
       ref={sectionRef}
       onClick={handleCardClick}
-      className={`snap-start-card min-w-(--card-width) h-full ${bgColorClasses[bgColor]} ${
+      className={`min-w-(--card-width) h-full ${bgColorClasses[bgColor]} ${
         isLight ? "text-black" : "text-white"
       } flex flex-col justify-end p-8 pl-14 md:p-12 relative shrink-0 overflow-hidden group/card ${href && href !== "#" ? "cursor-none" : ""}` }
     >
