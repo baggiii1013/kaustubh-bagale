@@ -13,7 +13,11 @@ import {
     StaggeredMenu,
     TechStackSection,
 } from "@/components";
+import { gsap } from "gsap";
+import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import { useCallback, useEffect, useRef, useState } from "react";
+
+gsap.registerPlugin(ScrollToPlugin);
 
 const menuItems = [
   { label: 'Home', ariaLabel: 'Go to home section', link: '#home' },
@@ -66,10 +70,15 @@ export default function Home() {
     
     if (sections[clampedIndex]) {
       const section = sections[clampedIndex] as HTMLElement;
-      // Use scrollTo for better cross-browser compatibility (especially Firefox)
-      main.scrollTo({
-        left: section.offsetLeft,
-        behavior: 'smooth'
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      // Mandatory snap re-snaps every frame of a programmatic scroll, so disable it for the tween
+      main.style.scrollSnapType = 'none';
+      gsap.to(main, {
+        scrollTo: { x: section.offsetLeft, autoKill: false },
+        duration: reduceMotion ? 0 : 0.9,
+        ease: 'power3.inOut',
+        overwrite: true,
+        onComplete: () => { main.style.scrollSnapType = ''; },
       });
       setCurrentSection(clampedIndex);
     }
@@ -96,12 +105,46 @@ export default function Home() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [currentSection, isLoading, scrollToSection]);
 
+  // Vertical mouse wheel -> horizontal section navigation
+  const lastWheelNav = useRef(0);
+  useEffect(() => {
+    const main = mainRef.current;
+    if (!main) return;
+
+    const handleWheel = (e: WheelEvent) => {
+      // Horizontal swipes scroll natively; ctrl+wheel is zoom
+      if (isLoading || e.ctrlKey || Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+
+      // Let nested vertical scrollers (About, FAQ, Tech) consume the wheel until they hit their edge
+      for (let el = e.target as HTMLElement | null; el && el !== main; el = el.parentElement) {
+        if (el.scrollHeight > el.clientHeight && /auto|scroll/.test(getComputedStyle(el).overflowY)) {
+          const canScroll = e.deltaY > 0
+            ? el.scrollTop + el.clientHeight < el.scrollHeight - 1
+            : el.scrollTop > 0;
+          if (canScroll) return;
+        }
+      }
+
+      e.preventDefault();
+      // ponytail: fixed cooldown (tween + inertia tail) so one gesture = one section; very long trackpad inertia may still advance twice
+      const now = Date.now();
+      if (now - lastWheelNav.current < 1000) return;
+      lastWheelNav.current = now;
+      scrollToSection(currentSection + (e.deltaY > 0 ? 1 : -1));
+    };
+
+    main.addEventListener('wheel', handleWheel, { passive: false });
+    return () => main.removeEventListener('wheel', handleWheel);
+  }, [currentSection, isLoading, scrollToSection]);
+
   // Track scroll position to update current section
   useEffect(() => {
     const main = mainRef.current;
     if (!main) return;
 
     const handleScroll = () => {
+      // scrollToSection already set the target; don't re-render through every section mid-tween
+      if (gsap.isTweening(main)) return;
       const sections = main.querySelectorAll('section');
       const scrollLeft = main.scrollLeft;
       const mainWidth = main.clientWidth;
