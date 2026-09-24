@@ -4,15 +4,15 @@
 export const faqs = [
   {
     q: "Who is Kaustubh Bagale?",
-    a: "Kaustubh Bagale is a full stack developer and final-year Computer Science Engineering student at Parul University, India. He builds web applications end to end — React and Next.js on the front end, Node.js and Express on the back end — with a focus on scalability, cloud computing, and DevOps practices such as containerisation and load balancing.",
+    a: "Kaustubh Bagale is a full stack developer and recent Computer Science Engineering graduate (B.Tech, Parul University, 2022–2026) based in Virar, Maharashtra, India. He was a Software Development Intern at Parul University from July to December 2025. He builds web applications end to end — React and Next.js on the front end, Node.js and Express on the back end — with a focus on scalability, cloud computing, and DevOps practices such as containerisation and load balancing.",
   },
   {
     q: "What does Kaustubh Bagale build?",
-    a: "Production web platforms rather than demos. His work includes the Parul University Convocation Portal, a dual-interface system that handled 100,000 concurrent users at 99.9% uptime behind Nginx load balancing, and a live university admission portal serving 1,000+ students whose self-service verification workflow cut administrative time by roughly 40%.",
+    a: "Production web platforms rather than demos. His work includes the Parul University Convocation Portal, a dual-interface system that handled 100,000+ concurrent users with zero downtime behind Nginx load balancing, and Pinaka, a terminal speed-typing app written in Go with real-time WPM and accuracy tracking.",
   },
   {
     q: "What technologies does he work with?",
-    a: "Day to day: JavaScript, TypeScript, React, Next.js, Node.js, Express, MongoDB and Tailwind CSS — the MERN stack plus the Next.js App Router. Alongside those he works in Java, Python, C++ and Rust, with PostgreSQL and Firebase for data, and Docker, Nginx, Git, AWS and Vercel for deployment and infrastructure.",
+    a: "Day to day: JavaScript, TypeScript, React, Next.js, Node.js, Express, MongoDB and Tailwind CSS — the MERN stack plus the Next.js App Router. Alongside those he works in Java, Python, Go, C, C++ and Rust, with Bun.js and Elysia on the back end, PostgreSQL and Firebase for data, and Docker, Nginx, Linux, Git, AWS and Vercel for deployment and infrastructure.",
   },
   {
     q: "Is Kaustubh Bagale available for freelance or full-time work?",

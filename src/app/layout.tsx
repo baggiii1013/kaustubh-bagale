@@ -24,7 +24,7 @@ const jsonLd = {
       jobTitle: "Full Stack Developer",
       description:
         "Full Stack Developer specializing in MERN stack & Next.js, building scalable systems for 100,000+ users.",
-      address: { "@type": "PostalAddress", addressCountry: "IN" },
+      address: { "@type": "PostalAddress", addressLocality: "Virar", addressRegion: "Maharashtra", addressCountry: "IN" },
       alumniOf: {
         "@type": "CollegeOrUniversity",
         name: "Parul University",
@@ -43,6 +43,7 @@ const jsonLd = {
         "MongoDB",
         "TypeScript",
         "JavaScript",
+        "Go",
         "Full Stack Development",
         "MERN Stack",
         "Docker",

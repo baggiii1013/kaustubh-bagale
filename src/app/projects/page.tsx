@@ -24,24 +24,23 @@ const projects: Project[] = [
     number: "01",
     title: "CONVOCATION PORTAL",
     subtitle: "Parul University Convocation Portal",
-    description: "High-performance platform with Nginx load balancing handling 100,000 concurrent users with 99.9% uptime. Dual-interface system for streamlined management.",
-    year: "2024",
+    description: "High-availability platform with Nginx reverse proxying and load balancing that served 100,000+ concurrent users with zero downtime. Dual-interface system for students and administrators.",
+    year: "2025",
     tags: ["React.js", "Node.js", "Nginx", "DevOps"],
     bgColor: "royal-purple",
     // Live portal is offline post-ceremony (subdomain no longer resolves) — code only.
     github: "https://github.com/baggiii1013/convocation-pu",
   },
   {
-    id: "admission-portal",
+    id: "pinaka",
     number: "02",
-    title: "ADMISSION PORTAL",
-    subtitle: "Live University Admission Portal",
-    description: "Full-stack portal serving 1000+ students with self-service verification workflow reducing admin time by 40% and eliminating manual errors.",
-    year: "2024",
-    tags: ["MERN Stack", "MongoDB", "Tailwind CSS", "Vercel"],
+    title: "PINAKA TYPE",
+    subtitle: "Terminal-Based Speed Typing App",
+    description: "Lightweight TUI for speed typing tests with real-time WPM and accuracy tracking. Optimized terminal rendering and key-event handling for sub-millisecond input latency, cross-platform.",
+    year: "2026",
+    tags: ["Go", "Bubble Tea", "TUI", "CLI"],
     bgColor: "neon-green",
-    href: "https://parul-student-hub.vercel.app",
-    github: "https://github.com/baggiii1013/student-hub",
+    github: "https://github.com/baggiii1013/pinaka",
   },
   {
     id: "client-portfolio",
@@ -174,9 +173,9 @@ export default function ProjectsPage() {
 
             <p className="font-accent text-base text-white/50 mt-6 max-w-2xl leading-relaxed">
               The six below run from university-scale infrastructure to developer
-              tooling. The convocation portal held 100,000 concurrent users behind
-              Nginx load balancing at 99.9% uptime; the admission portal cut admin
-              handling time by 40% for 1,000+ students. Smaller builds cover media
+              tooling. The convocation portal held 100,000+ concurrent users behind
+              Nginx load balancing with zero downtime; Pinaka is a Go terminal app
+              for speed typing tests with sub-millisecond input latency. Smaller builds cover media
               processing with FFmpeg and yt-dlp, JWT-secured REST APIs, and
               AI-assisted documentation. Most are open source — the repository is
               linked on each card. The tools behind them are listed on my{" "}

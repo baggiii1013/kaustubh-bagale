@@ -4,10 +4,10 @@ import Beams from "./bg/LazyBeams";
 
 export default function AboutSection() {
   const skills = [
-    { category: "Languages", items: ["Java", "JavaScript", "Python", "C++"] },
+    { category: "Languages", items: ["Java", "JavaScript", "Python", "Go", "C", "C++"] },
     { category: "Frontend", items: ["React.js", "Next.js", "Tailwind CSS", "Vite"] },
-    { category: "Backend", items: ["Node.js", "Express.js", "RESTful APIs", "Microservices"] },
-    { category: "DevOps", items: ["Docker", "Nginx", "Git", "Vercel"] },
+    { category: "Backend", items: ["Node.js", "Express.js", "Bun.js", "Elysia", "RESTful APIs", "Microservices"] },
+    { category: "DevOps", items: ["Docker", "Nginx", "Git", "Vercel", "Linux"] },
   ];
 
   return (
@@ -47,9 +47,10 @@ export default function AboutSection() {
                 Who I Am
               </span>
               <p className="font-body text-base md:text-lg leading-relaxed text-white/90">
-                Final-year <span className="text-neon-blue font-semibold">Computer Science Engineering</span> student 
-                at Parul University, specializing in <span className="text-neon-green font-semibold">Scalability</span> and
-                <span className="text-neon-green font-semibold"> Cloud Computing</span> principles.
+                Recent <span className="text-neon-blue font-semibold">Computer Science Engineering</span> graduate
+                from Parul University (2022–2026), specializing in <span className="text-neon-green font-semibold">Scalability</span> and
+                <span className="text-neon-green font-semibold"> Cloud Computing</span>. Previously a Software Development
+                Intern at Parul University, building its convocation and admission portals.
               </p>
             </div>
 
@@ -102,7 +103,7 @@ export default function AboutSection() {
             Location
           </span>
           <span className="font-accent text-sm text-white/80">
-            India
+            Virar, India
           </span>
         </div>
       </div>

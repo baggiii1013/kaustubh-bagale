@@ -37,7 +37,7 @@ export default function ArchiveSection() {
         </Link>
       </div>
       <div className="absolute bottom-12 left-1/2 -translate-x-1/2 font-accent text-[10px] tracking-[0.4em] opacity-30 uppercase whitespace-nowrap">
-        Portfolio Archive 2021-2025
+        Portfolio Archive 2021-2026
       </div>
     </section>
   );

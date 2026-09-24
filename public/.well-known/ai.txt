@@ -12,7 +12,7 @@ AI search engines and assistants. Attribution to "Kaustubh Bagale
 Site-Name: Kaustubh Bagale
 Owner: Kaustubh Bagale
 Owner-Type: individual
-Location: India
+Location: Virar, Maharashtra, India
 Contact-Email: kaustubhbagale10@gmail.com
 Canonical: https://kaustubhbagale.me
 Sitemap: https://kaustubhbagale.me/sitemap.xml

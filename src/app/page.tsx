@@ -14,6 +14,7 @@ import {
     TechStackSection,
 } from "@/components";
 import Lenis from "lenis";
+import Snap from "lenis/snap";
 import "lenis/dist/lenis.css";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -54,7 +55,22 @@ export default function Home() {
       autoRaf: true,
     });
     lenisRef.current = lenis;
+    // Settle on the nearest card once a gesture ends
+    const snap = new Snap(lenis, { type: 'mandatory' });
+    // Not snap.addElements: lenis/snap uses rect.top for align 'start' even when horizontal,
+    // so every card snapped to 0. Feed it each card's x offset inside main instead.
+    let removeSnaps: (() => void)[] = [];
+    const setSnaps = () => {
+      removeSnaps.forEach((remove) => remove());
+      removeSnaps = Array.from(main.querySelectorAll<HTMLElement>(':scope > section'), (section) =>
+        snap.add(section.offsetLeft - main.offsetLeft),
+      );
+    };
+    setSnaps();
+    window.addEventListener('resize', setSnaps); // --card-width is viewport-based
     return () => {
+      window.removeEventListener('resize', setSnaps);
+      snap.destroy();
       lenis.destroy();
       lenisRef.current = null;
     };
@@ -186,7 +202,7 @@ export default function Home() {
           title="CONVOCATION"
           titleSecondLine="PORTAL"
           subtitle="Parul University Convocation Portal"
-          description="End-to-end management system streamlining graduation ceremonies for thousands.99% uptime with upto 100,000+ users"
+          description="End-to-end convocation platform that served 100,000+ concurrent users with zero downtime, behind Nginx load balancing."
           year="2025"
           ctaText="View Code"
           ctaIcon="north_east"
@@ -197,19 +213,19 @@ export default function Home() {
           href="https://github.com/baggiii1013/convocation-pu"
         />
 
-        {/* Project 2: Client Portfolio */}
+        {/* Project 2: Pinaka */}
         <ProjectCard
           number="02"
-          title="Admission"
-          titleSecondLine="Portal"
-          subtitle="For first year studeni"
-          description="Fully responsive, custom portfolio website with perfect 100 Lighthouse Performance score."
+          title="Pinaka"
+          titleSecondLine="Type"
+          subtitle="Terminal Speed Typing App"
+          description="Speed typing tests without leaving the terminal. A Go + Bubble Tea TUI with real-time WPM and accuracy tracking and sub-millisecond input latency."
           year="2026"
-          ctaText="View Site"
+          ctaText="View Code"
           ctaIcon="north_east"
           bgColor="neon-green"
           textColor="black"
-          href="https://parul-student-hub.vercel.app"
+          href="https://github.com/baggiii1013/pinaka"
         />
 
         {/* Archive / View All Projects Section */}
