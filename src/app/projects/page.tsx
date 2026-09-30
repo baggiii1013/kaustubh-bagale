@@ -171,6 +171,10 @@ export default function ProjectsPage() {
               A collection of projects I&apos;ve built over the years. Each one represents a unique challenge and learning experience.
             </p>
 
+            <h2 className="font-accent text-lg md:text-xl uppercase tracking-wider text-neon-pink mt-8 mb-3">
+              What projects has Kaustubh Bagale built?
+            </h2>
+
             <p className="font-accent text-base text-white/50 mt-6 max-w-2xl leading-relaxed">
               The six below run from university-scale infrastructure to developer
               tooling. The convocation portal held 100,000+ concurrent users behind
